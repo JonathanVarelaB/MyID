@@ -25,4 +25,9 @@ class EditarGafeteController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func cancelarBoton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
