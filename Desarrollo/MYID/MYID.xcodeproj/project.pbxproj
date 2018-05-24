@@ -12,6 +12,9 @@
 		54711D9E20B60A3D008CD0F4 /* NoticiaContenidoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54711D9D20B60A3D008CD0F4 /* NoticiaContenidoController.swift */; };
 		548044FF20B6220300B600EE /* RestaurantesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548044FE20B6220300B600EE /* RestaurantesController.swift */; };
 		5480450520B6283C00B600EE /* ConvenioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5480450420B6283C00B600EE /* ConvenioCell.swift */; };
+		750B80CC20B6543F0005B8B6 /* TiendasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B80CB20B6543F0005B8B6 /* TiendasController.swift */; };
+		750B80CE20B656E40005B8B6 /* OtrosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B80CD20B656E40005B8B6 /* OtrosController.swift */; };
+		750B80D020B678600005B8B6 /* MapaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B80CF20B678600005B8B6 /* MapaController.swift */; };
 		75329FA420B11C7700B69F7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75329FA320B11C7700B69F7D /* AppDelegate.swift */; };
 		75329FA920B11C7700B69F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75329FA720B11C7700B69F7D /* Main.storyboard */; };
 		75329FAC20B11C7700B69F7D /* MYID.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75329FAA20B11C7700B69F7D /* MYID.xcdatamodeld */; };
@@ -28,6 +31,9 @@
 		54711D9D20B60A3D008CD0F4 /* NoticiaContenidoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaContenidoController.swift; sourceTree = "<group>"; };
 		548044FE20B6220300B600EE /* RestaurantesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantesController.swift; sourceTree = "<group>"; };
 		5480450420B6283C00B600EE /* ConvenioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenioCell.swift; sourceTree = "<group>"; };
+		750B80CB20B6543F0005B8B6 /* TiendasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiendasController.swift; sourceTree = "<group>"; };
+		750B80CD20B656E40005B8B6 /* OtrosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtrosController.swift; sourceTree = "<group>"; };
+		750B80CF20B678600005B8B6 /* MapaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaController.swift; sourceTree = "<group>"; };
 		75329FA020B11C7600B69F7D /* MYID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75329FA320B11C7700B69F7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75329FA820B11C7700B69F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 				54711D9A20B5D496008CD0F4 /* NoticiasController.swift */,
 				54711D9D20B60A3D008CD0F4 /* NoticiaContenidoController.swift */,
 				548044FE20B6220300B600EE /* RestaurantesController.swift */,
+				750B80CB20B6543F0005B8B6 /* TiendasController.swift */,
+				750B80CD20B656E40005B8B6 /* OtrosController.swift */,
+				750B80CF20B678600005B8B6 /* MapaController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,7 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5480450520B6283C00B600EE /* ConvenioCell.swift in Sources */,
+				750B80CC20B6543F0005B8B6 /* TiendasController.swift in Sources */,
 				75329FAC20B11C7700B69F7D /* MYID.xcdatamodeld in Sources */,
+				750B80CE20B656E40005B8B6 /* OtrosController.swift in Sources */,
+				750B80D020B678600005B8B6 /* MapaController.swift in Sources */,
 				75769DA020B3F2F6006FA061 /* GafeteController.swift in Sources */,
 				54711D9E20B60A3D008CD0F4 /* NoticiaContenidoController.swift in Sources */,
 				75329FBC20B13C2200B69F7D /* LoginController.swift in Sources */,
