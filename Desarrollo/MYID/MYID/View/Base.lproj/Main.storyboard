@@ -310,7 +310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.92549019610000005" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Noticia Cell" rowHeight="105" id="fB2-0y-OEw" customClass="NoticiaCell" customModule="MYID" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Noticia Cell" rowHeight="105" id="fB2-0y-OEw" customClass="NoticiaCell" customModule="MYID" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fB2-0y-OEw" id="bv1-QH-yI8">
@@ -522,17 +522,27 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-YL-LdB">
+                                <rect key="frame" x="150" y="230" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="mM1-fA-7g9"/>
+                                    <constraint firstAttribute="width" constant="20" id="zq3-zH-TLJ"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VAt-do-fEd" firstAttribute="leading" secondItem="pG5-bf-k2a" secondAttribute="leading" id="8CQ-CI-N35"/>
                             <constraint firstItem="VAt-do-fEd" firstAttribute="bottom" secondItem="pG5-bf-k2a" secondAttribute="bottom" id="BDH-CT-BS1"/>
                             <constraint firstItem="VAt-do-fEd" firstAttribute="trailing" secondItem="pG5-bf-k2a" secondAttribute="trailing" id="m1U-JJ-cIm"/>
+                            <constraint firstItem="pnq-YL-LdB" firstAttribute="centerY" secondItem="7af-Sb-pNC" secondAttribute="centerY" id="n6k-YJ-F5e"/>
+                            <constraint firstItem="pnq-YL-LdB" firstAttribute="centerX" secondItem="7af-Sb-pNC" secondAttribute="centerX" id="rNE-5N-CVW"/>
                             <constraint firstItem="VAt-do-fEd" firstAttribute="top" secondItem="pG5-bf-k2a" secondAttribute="top" id="t3I-d7-ghW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pG5-bf-k2a"/>
                     </view>
                     <connections>
+                        <outlet property="indicadorActividad" destination="pnq-YL-LdB" id="hev-RB-fo9"/>
                         <outlet property="webNoticia" destination="VAt-do-fEd" id="bjL-ub-9m7"/>
                     </connections>
                 </viewController>

@@ -26,6 +26,9 @@ class NoticiasController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Noticia Cell", for: indexPath) as! NoticiaCell
+        
+        
+        
         cell.viewSeparador.clipsToBounds = false
         cell.viewSeparador.layer.cornerRadius = 10
         cell.viewSeparador.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
