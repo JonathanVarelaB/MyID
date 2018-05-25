@@ -42,8 +42,7 @@ class NoticiasController: UITableViewController {
     @IBAction func compartirNoticia(_ sender: UIButton) {
         // tomar url de sender
         let noticiaURL =  [NSURL(string: "https://www.apple.com")]
-        let activityViewController = UIActivityViewController(activityItems: [noticiaURL as Any] , applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [UIActivityType.print, UIActivityType.copyToPasteboard, UIActivityType.message]
+        let activityViewController = UIActivityViewController(activityItems: noticiaURL , applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
     

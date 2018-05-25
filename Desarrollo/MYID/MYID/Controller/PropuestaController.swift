@@ -28,4 +28,12 @@ class PropuestaController: UITableViewController {
         return 120.0;
     }
     
+    @IBAction func eliminarPropuesta(_ sender: UIButton) {
+
+        let alert = UIAlertController(title: "Eliminar", message: "¿Desea eliminar la propuesta?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

@@ -63,7 +63,7 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="username"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yiz-Fy-whb">
                                                         <rect key="frame" x="15" y="62" width="257" height="30"/>
@@ -978,7 +978,7 @@
                                                     <constraint firstAttribute="height" constant="18" id="qTU-Gm-zkR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.23921568630000001" green="0.40000000000000002" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desarrollador" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-PK-ptB">
@@ -998,7 +998,7 @@
                                                     <constraint firstAttribute="height" constant="18" id="g8k-So-TKv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.23921568630000001" green="0.40000000000000002" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1022,14 +1022,13 @@
                                             <constraint firstAttribute="width" constant="40" id="tmo-Bn-9FC"/>
                                         </constraints>
                                         <state key="normal" title="Editar">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23921568630000001" green="0.40000000000000002" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="3We-hy-yzf" kind="presentation" id="pl5-KK-Yus"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.34901960780000002" green="0.52156862749999999" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="1rO-M7-uFm" firstAttribute="centerY" secondItem="CJw-fD-35Y" secondAttribute="centerY" constant="-3" id="6DW-N9-IXt"/>
                                     <constraint firstItem="jdM-Of-gao" firstAttribute="top" secondItem="CJw-fD-35Y" secondAttribute="top" constant="17" id="96p-pF-ZYJ"/>
@@ -1060,6 +1059,7 @@
                     <connections>
                         <outlet property="fotoGafete" destination="dxF-Tf-E31" id="ArD-7Y-wNv"/>
                         <outlet property="viewContacto" destination="RYu-Zn-vED" id="cib-af-uRW"/>
+                        <outlet property="viewGafete" destination="CJw-fD-35Y" id="lW5-lw-kyt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ7-EQ-2hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1085,9 +1085,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxr-G7-w3a" userLabel="Card">
                                             <rect key="frame" x="15" y="15" width="290" height="105"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqJ-SG-lxK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuatro nuevas aerolíneas domesticas operarían a final de 2018 domesticas oper" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqJ-SG-lxK">
                                                     <rect key="frame" x="58" y="6" width="194" height="74"/>
-                                                    <string key="text">Cuatro nuevas aerolíneas domesticas operarían a final de 2018 domesticas operarían a final de 2018 omesticas operarían a final de 2018 domesticas operarían a final de 2018</string>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1112,7 +1111,7 @@
                                                         <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="compartirNoticia:" destination="Yhv-bM-4ok" eventType="touchUpInside" id="LH6-ny-ujE"/>
+                                                        <segue destination="qjZ-Ig-g9d" kind="presentation" id="8sX-3f-U2X"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1p-FP-Npm">
@@ -1125,9 +1124,6 @@
                                                     <state key="normal">
                                                         <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="compartirNoticia:" destination="Yhv-bM-4ok" eventType="touchUpInside" id="NSm-VY-14I"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAd-lJ-fke">
                                                     <rect key="frame" x="10" y="73" width="22" height="22"/>
@@ -1139,9 +1135,6 @@
                                                     <state key="normal">
                                                         <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="compartirNoticia:" destination="Yhv-bM-4ok" eventType="touchUpInside" id="EvN-ro-eLl"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2R-yt-N6w">
                                                     <rect key="frame" x="260" y="75" width="22" height="22"/>
@@ -1154,7 +1147,7 @@
                                                         <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="compartirNoticia:" destination="Yhv-bM-4ok" eventType="touchUpInside" id="H5D-gB-5xP"/>
+                                                        <action selector="eliminarPropuesta:" destination="Yhv-bM-4ok" eventType="touchUpInside" id="go1-Nt-fCS"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDp-q3-UTd" userLabel="Separador">
@@ -1233,51 +1226,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jk0-Kt-br7" userLabel="ViewForm">
-                                <rect key="frame" x="16" y="58" width="288" height="364"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descripción" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jyh-4U-OHj">
-                                        <rect key="frame" x="15" y="40" width="258" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-D4-6aJ" userLabel="ViewBotones">
-                                        <rect key="frame" x="15" y="169" width="258" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iei-e4-5EZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
-                                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                <state key="normal" title="Guardar">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nd1-ms-eIU">
-                                                <rect key="frame" x="138" y="0.0" width="120" height="50"/>
-                                                <color key="backgroundColor" red="0.94901960780000005" green="0.36470588240000001" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                <state key="normal" title="Cancelar">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="cancelarBoton:" destination="qjZ-Ig-g9d" eventType="touchUpInside" id="bcN-Kc-xw1"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Nd1-ms-eIU" firstAttribute="leading" secondItem="iei-e4-5EZ" secondAttribute="trailing" constant="18" id="9HF-Yn-gTB"/>
-                                            <constraint firstItem="Nd1-ms-eIU" firstAttribute="leading" secondItem="iei-e4-5EZ" secondAttribute="trailing" constant="18" id="u7c-Pt-9HI"/>
-                                            <constraint firstItem="iei-e4-5EZ" firstAttribute="width" secondItem="Nd1-ms-eIU" secondAttribute="width" id="yer-4l-wJw"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Propuesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUw-R3-2hi">
                                 <rect key="frame" x="41" y="40" width="238" height="22"/>
                                 <constraints>
@@ -1288,21 +1236,86 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jk0-Kt-br7" userLabel="ViewForm">
+                                <rect key="frame" x="16" y="152.5" width="288" height="175"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-I9-dNi">
+                                        <rect key="frame" x="15" y="14.5" width="258" height="29"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="9hc-yp-OBh"/>
+                                        </constraints>
+                                        <string key="text">Cuatro nuevas aerolíneas domesticas operarían a final de 2018 domesticas operarían a final de 2018 omesticas operarían a final de 2018 domesticas operarían a final de 2018</string>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-D4-6aJ" userLabel="ViewBotones">
+                                        <rect key="frame" x="15" y="117" width="258" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iei-e4-5EZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <state key="normal" title="Guardar">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nd1-ms-eIU">
+                                                <rect key="frame" x="138" y="0.0" width="120" height="50"/>
+                                                <color key="backgroundColor" red="0.94901960780000005" green="0.36470588240000001" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <state key="normal" title="Cancelar">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelar:" destination="qjZ-Ig-g9d" eventType="touchUpInside" id="Kwg-8T-VEI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Nd1-ms-eIU" firstAttribute="leading" secondItem="iei-e4-5EZ" secondAttribute="trailing" constant="18" id="5tJ-hM-frZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nd1-ms-eIU" secondAttribute="bottom" id="HVy-6N-22p"/>
+                                            <constraint firstItem="iei-e4-5EZ" firstAttribute="top" secondItem="W0w-D4-6aJ" secondAttribute="top" id="Zeh-UQ-RLg"/>
+                                            <constraint firstItem="Nd1-ms-eIU" firstAttribute="top" secondItem="W0w-D4-6aJ" secondAttribute="top" id="ahC-ng-L7e"/>
+                                            <constraint firstItem="Nd1-ms-eIU" firstAttribute="leading" secondItem="iei-e4-5EZ" secondAttribute="trailing" constant="18" id="eNq-rZ-iFX"/>
+                                            <constraint firstAttribute="height" constant="50" id="f0c-Al-du5"/>
+                                            <constraint firstItem="iei-e4-5EZ" firstAttribute="leading" secondItem="W0w-D4-6aJ" secondAttribute="leading" id="mxF-Bg-jxp"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nd1-ms-eIU" secondAttribute="trailing" id="rTi-Wr-pZP"/>
+                                            <constraint firstAttribute="bottom" secondItem="iei-e4-5EZ" secondAttribute="bottom" id="uVP-JA-mfU"/>
+                                            <constraint firstItem="iei-e4-5EZ" firstAttribute="width" secondItem="Nd1-ms-eIU" secondAttribute="width" id="xDv-GT-iUU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uyH-I9-dNi" firstAttribute="top" secondItem="jk0-Kt-br7" secondAttribute="top" constant="15" id="FKr-kV-hGQ"/>
+                                    <constraint firstAttribute="height" constant="175" id="Lwc-0I-Bpg"/>
+                                    <constraint firstItem="uyH-I9-dNi" firstAttribute="leading" secondItem="jk0-Kt-br7" secondAttribute="leading" constant="15" id="OhH-y2-Onw"/>
+                                    <constraint firstAttribute="bottom" secondItem="W0w-D4-6aJ" secondAttribute="bottom" constant="8" id="Ukr-1m-2xN"/>
+                                    <constraint firstAttribute="trailing" secondItem="W0w-D4-6aJ" secondAttribute="trailing" constant="15" id="dpm-CM-aFF"/>
+                                    <constraint firstAttribute="trailing" secondItem="uyH-I9-dNi" secondAttribute="trailing" constant="15" id="koF-de-YWo"/>
+                                    <constraint firstItem="W0w-D4-6aJ" firstAttribute="leading" secondItem="jk0-Kt-br7" secondAttribute="leading" constant="15" id="pwK-3r-HVw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HUw-R3-2hi" firstAttribute="centerX" secondItem="dCX-vA-DKt" secondAttribute="centerX" id="26y-S7-2iR"/>
+                            <constraint firstItem="jk0-Kt-br7" firstAttribute="centerY" secondItem="dCX-vA-DKt" secondAttribute="centerY" id="HvG-0v-yiz"/>
                             <constraint firstItem="HUw-R3-2hi" firstAttribute="top" secondItem="PxT-9B-beP" secondAttribute="top" constant="20" id="I7e-9Z-PWF"/>
+                            <constraint firstItem="PxT-9B-beP" firstAttribute="trailing" secondItem="jk0-Kt-br7" secondAttribute="trailing" constant="16" id="Uzc-f5-yEO"/>
+                            <constraint firstItem="jk0-Kt-br7" firstAttribute="leading" secondItem="PxT-9B-beP" secondAttribute="leading" constant="16" id="klU-h1-BCc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PxT-9B-beP"/>
                     </view>
                     <connections>
-                        <outlet property="nombreText" destination="Jyh-4U-OHj" id="JzA-iL-pv3"/>
+                        <outlet property="descripcionText" destination="uyH-I9-dNi" id="hI9-E3-X2T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjE-R2-0Ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="2184"/>
+            <point key="canvasLocation" x="2090.625" y="2183.75"/>
         </scene>
     </scenes>
     <resources>
