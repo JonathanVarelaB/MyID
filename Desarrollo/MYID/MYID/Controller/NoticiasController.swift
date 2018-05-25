@@ -26,14 +26,12 @@ class NoticiasController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Noticia Cell", for: indexPath) as! NoticiaCell
-        
-        
-        
         cell.viewSeparador.clipsToBounds = false
         cell.viewSeparador.layer.cornerRadius = 10
         cell.viewSeparador.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         //cell.labelCel.text = self.noticias[indexPath.row]
         //cell.imagenCell.image = UIImage(named: self.noticias[indexPath.row])
+        // asignar URL a alguna propiedad del boton para poder compartir
         return cell
     }
     
@@ -41,4 +39,13 @@ class NoticiasController: UITableViewController {
         return 105.0;
     }
 
+    @IBAction func compartirNoticia(_ sender: UIButton) {
+        // tomar url de sender
+        let noticiaURL =  [NSURL(string: "https://www.apple.com")]
+        let activityViewController = UIActivityViewController(activityItems: [noticiaURL as Any] , applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityType.print, UIActivityType.copyToPasteboard, UIActivityType.message]
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
 }

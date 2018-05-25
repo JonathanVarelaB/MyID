@@ -21,6 +21,9 @@
 		75329FAE20B11C7700B69F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75329FAD20B11C7700B69F7D /* Assets.xcassets */; };
 		75329FB120B11C7700B69F7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75329FAF20B11C7700B69F7D /* LaunchScreen.storyboard */; };
 		75329FBC20B13C2200B69F7D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75329FBB20B13C2200B69F7D /* LoginController.swift */; };
+		7558389820B7AB17002E6B1C /* PropuestaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558389720B7AB17002E6B1C /* PropuestaCell.swift */; };
+		7558389A20B7AB3C002E6B1C /* PropuestaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558389920B7AB3C002E6B1C /* PropuestaController.swift */; };
+		7558389C20B7CB35002E6B1C /* EditarPropuestaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558389B20B7CB35002E6B1C /* EditarPropuestaController.swift */; };
 		75769DA020B3F2F6006FA061 /* GafeteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75769D9F20B3F2F6006FA061 /* GafeteController.swift */; };
 		75E775AF20B539E90066AAE2 /* EditarGafeteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E775AE20B539E90066AAE2 /* EditarGafeteController.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,9 @@
 		75329FB020B11C7700B69F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75329FB220B11C7700B69F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75329FBB20B13C2200B69F7D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7558389720B7AB17002E6B1C /* PropuestaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropuestaCell.swift; sourceTree = "<group>"; };
+		7558389920B7AB3C002E6B1C /* PropuestaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropuestaController.swift; sourceTree = "<group>"; };
+		7558389B20B7CB35002E6B1C /* EditarPropuestaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPropuestaController.swift; sourceTree = "<group>"; };
 		75769D9F20B3F2F6006FA061 /* GafeteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GafeteController.swift; sourceTree = "<group>"; };
 		75E775AE20B539E90066AAE2 /* EditarGafeteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarGafeteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +106,7 @@
 				75329FAA20B11C7700B69F7D /* MYID.xcdatamodeld */,
 				54711D9820B5D3B7008CD0F4 /* NoticiaCell.swift */,
 				5480450420B6283C00B600EE /* ConvenioCell.swift */,
+				7558389720B7AB17002E6B1C /* PropuestaCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +124,8 @@
 				750B80CB20B6543F0005B8B6 /* TiendasController.swift */,
 				750B80CD20B656E40005B8B6 /* OtrosController.swift */,
 				750B80CF20B678600005B8B6 /* MapaController.swift */,
+				7558389920B7AB3C002E6B1C /* PropuestaController.swift */,
+				7558389B20B7CB35002E6B1C /* EditarPropuestaController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,14 +206,17 @@
 				75329FAC20B11C7700B69F7D /* MYID.xcdatamodeld in Sources */,
 				750B80CE20B656E40005B8B6 /* OtrosController.swift in Sources */,
 				750B80D020B678600005B8B6 /* MapaController.swift in Sources */,
+				7558389820B7AB17002E6B1C /* PropuestaCell.swift in Sources */,
 				75769DA020B3F2F6006FA061 /* GafeteController.swift in Sources */,
 				54711D9E20B60A3D008CD0F4 /* NoticiaContenidoController.swift in Sources */,
 				75329FBC20B13C2200B69F7D /* LoginController.swift in Sources */,
 				75329FA420B11C7700B69F7D /* AppDelegate.swift in Sources */,
+				7558389C20B7CB35002E6B1C /* EditarPropuestaController.swift in Sources */,
 				548044FF20B6220300B600EE /* RestaurantesController.swift in Sources */,
 				54711D9B20B5D496008CD0F4 /* NoticiasController.swift in Sources */,
 				75E775AF20B539E90066AAE2 /* EditarGafeteController.swift in Sources */,
 				54711D9920B5D3B7008CD0F4 /* NoticiaCell.swift in Sources */,
+				7558389A20B7AB3C002E6B1C /* PropuestaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,13 +15,10 @@ class NoticiaContenidoController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.indicadorActividad.startAnimating()
         let req = URLRequest(url: URL(string: "https://www.google.co.cr")!)
         self.webNoticia.delegate = self
         self.webNoticia.loadRequest(req)
-    }
-    
-    func webViewDidStartLoad(_ webView : UIWebView) {
-        self.indicadorActividad.startAnimating()
     }
     
     func webViewDidFinishLoad(_ webView : UIWebView) {

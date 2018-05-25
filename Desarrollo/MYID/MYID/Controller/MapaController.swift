@@ -19,6 +19,7 @@ class MapaController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinada, 4000, 4000)
         let lugar = MKPointAnnotation();
         lugar.coordinate = coordinada;
+        lugar.title = "Pops"
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotation(lugar);
     }
