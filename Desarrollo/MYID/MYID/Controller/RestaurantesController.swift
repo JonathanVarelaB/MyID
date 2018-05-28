@@ -1,11 +1,3 @@
-//
-//  RestaurantesController.swift
-//  MYID
-//
-//  Created by MacBookDesarrolloTecno01 on 5/23/18.
-//  Copyright © 2018 Jonathan Varela. All rights reserved.
-//
-
 import UIKit
 
 class RestaurantesController: UITableViewController {
@@ -35,6 +27,5 @@ class RestaurantesController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 80.0;
     }
-
 
 }

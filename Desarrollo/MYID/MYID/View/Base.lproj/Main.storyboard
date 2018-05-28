@@ -1247,7 +1247,7 @@
                                         </constraints>
                                         <string key="text">Cuatro nuevas aerolíneas domesticas operarían a final de 2018 domesticas operarían a final de 2018 omesticas operarían a final de 2018 domesticas operarían a final de 2018</string>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-D4-6aJ" userLabel="ViewBotones">
                                         <rect key="frame" x="15" y="117" width="258" height="50"/>

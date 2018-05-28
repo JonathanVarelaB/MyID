@@ -6,12 +6,10 @@ class EditarPropuestaController: UIViewController, UITextViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        descripcionText.delegate = self
-        self.descripcionText.text = "Descripción"
-        self.descripcionText.textColor = UIColor.lightGray
-        self.descripcionText.underlined()
+        self.establecerDiseno()
         self.descripcionText.delegate = self
         self.hideKeyboardWhenTappedAround()
+        self.establecerPlaceholder(texto: "Descripción", color: UIColor.lightGray)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +22,15 @@ class EditarPropuestaController: UIViewController, UITextViewDelegate{
 
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor(red: 51.0/255, green: 102.0/255, blue: 153.0/255, alpha: 1.0)
+            self.establecerPlaceholder(texto: "", color: UIColor(red: 51.0/255, green: 102.0/255, blue: 153.0/255, alpha: 1.0))
+            //textView.text = nil
+            //textView.textColor = UIColor(red: 51.0/255, green: 102.0/255, blue: 153.0/255, alpha: 1.0)
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Descripción"
-            textView.textColor = UIColor.lightGray
+            self.establecerPlaceholder(texto: "Descripción", color: UIColor.lightGray)
         }
     }
     
@@ -42,8 +40,12 @@ class EditarPropuestaController: UIViewController, UITextViewDelegate{
         return numberOfChars < 80
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
+    func establecerPlaceholder(texto: String, color: UIColor){
+        self.descripcionText.text = texto
+        self.descripcionText.textColor = color
+    }
+    
+    func establecerDiseno(){
+        self.descripcionText.underlined()
     }
 }

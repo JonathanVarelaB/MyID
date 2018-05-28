@@ -1,11 +1,3 @@
-//
-//  OtrosController.swift
-//  MYID
-//
-//  Created by Jonathan Varela on 5/23/18.
-//  Copyright © 2018 Jonathan Varela. All rights reserved.
-//
-
 import UIKit
 
 class OtrosController: UITableViewController {
