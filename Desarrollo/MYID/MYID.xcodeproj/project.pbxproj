@@ -26,6 +26,8 @@
 		7558389A20B7AB3C002E6B1C /* PropuestaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558389920B7AB3C002E6B1C /* PropuestaController.swift */; };
 		7558389C20B7CB35002E6B1C /* EditarPropuestaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558389B20B7CB35002E6B1C /* EditarPropuestaController.swift */; };
 		75769DA020B3F2F6006FA061 /* GafeteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75769D9F20B3F2F6006FA061 /* GafeteController.swift */; };
+		75B8E64220BD0BAC006FBD01 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B8E64120BD0BAB006FBD01 /* SWRevealViewController.m */; };
+		75B8E64420BD11F1006FBD01 /* ConveniosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B8E64320BD11F1006FBD01 /* ConveniosController.swift */; };
 		75E775AF20B539E90066AAE2 /* EditarGafeteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E775AE20B539E90066AAE2 /* EditarGafeteController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,10 @@
 		7558389920B7AB3C002E6B1C /* PropuestaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropuestaController.swift; sourceTree = "<group>"; };
 		7558389B20B7CB35002E6B1C /* EditarPropuestaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPropuestaController.swift; sourceTree = "<group>"; };
 		75769D9F20B3F2F6006FA061 /* GafeteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GafeteController.swift; sourceTree = "<group>"; };
+		75B8E63F20BD0BAA006FBD01 /* MYID-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MYID-Bridging-Header.h"; sourceTree = "<group>"; };
+		75B8E64020BD0BAB006FBD01 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		75B8E64120BD0BAB006FBD01 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		75B8E64320BD11F1006FBD01 /* ConveniosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConveniosController.swift; sourceTree = "<group>"; };
 		75E775AE20B539E90066AAE2 /* EditarGafeteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarGafeteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +90,7 @@
 		75329FA220B11C7600B69F7D /* MYID */ = {
 			isa = PBXGroup;
 			children = (
+				75B8E64820BD3382006FBD01 /* Resources */,
 				75329FBA20B11C9700B69F7D /* Controller */,
 				75329FB920B11C9200B69F7D /* Model */,
 				75329FB820B11C8D00B69F7D /* View */,
@@ -96,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				75329FA720B11C7700B69F7D /* Main.storyboard */,
-				75329FAD20B11C7700B69F7D /* Assets.xcassets */,
 				75329FAF20B11C7700B69F7D /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -116,6 +122,7 @@
 		75329FBA20B11C9700B69F7D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				75B8E63E20BD0B59006FBD01 /* SWRevealViewController */,
 				54429A7320B8A475004443EC /* extensions.swift */,
 				75329FA320B11C7700B69F7D /* AppDelegate.swift */,
 				75329FBB20B13C2200B69F7D /* LoginController.swift */,
@@ -129,8 +136,27 @@
 				750B80CF20B678600005B8B6 /* MapaController.swift */,
 				7558389920B7AB3C002E6B1C /* PropuestaController.swift */,
 				7558389B20B7CB35002E6B1C /* EditarPropuestaController.swift */,
+				75B8E64320BD11F1006FBD01 /* ConveniosController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		75B8E63E20BD0B59006FBD01 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75B8E64020BD0BAB006FBD01 /* SWRevealViewController.h */,
+				75B8E64120BD0BAB006FBD01 /* SWRevealViewController.m */,
+				75B8E63F20BD0BAA006FBD01 /* MYID-Bridging-Header.h */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		75B8E64820BD3382006FBD01 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75329FAD20B11C7700B69F7D /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +191,7 @@
 				TargetAttributes = {
 					75329F9F20B11C7600B69F7D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -209,6 +236,7 @@
 				750B80CC20B6543F0005B8B6 /* TiendasController.swift in Sources */,
 				75329FAC20B11C7700B69F7D /* MYID.xcdatamodeld in Sources */,
 				750B80CE20B656E40005B8B6 /* OtrosController.swift in Sources */,
+				75B8E64220BD0BAC006FBD01 /* SWRevealViewController.m in Sources */,
 				750B80D020B678600005B8B6 /* MapaController.swift in Sources */,
 				7558389820B7AB17002E6B1C /* PropuestaCell.swift in Sources */,
 				75769DA020B3F2F6006FA061 /* GafeteController.swift in Sources */,
@@ -219,6 +247,7 @@
 				548044FF20B6220300B600EE /* RestaurantesController.swift in Sources */,
 				54711D9B20B5D496008CD0F4 /* NoticiasController.swift in Sources */,
 				75E775AF20B539E90066AAE2 /* EditarGafeteController.swift in Sources */,
+				75B8E64420BD11F1006FBD01 /* ConveniosController.swift in Sources */,
 				54711D9920B5D3B7008CD0F4 /* NoticiaCell.swift in Sources */,
 				7558389A20B7AB3C002E6B1C /* PropuestaController.swift in Sources */,
 			);
@@ -364,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA2YLH9886;
 				INFOPLIST_FILE = MYID/Info.plist;
@@ -373,6 +403,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvarela.MYID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MYID/Controller/SWRevealViewController/MYID-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -382,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA2YLH9886;
 				INFOPLIST_FILE = MYID/Info.plist;
@@ -391,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvarela.MYID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MYID/Controller/SWRevealViewController/MYID-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

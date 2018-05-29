@@ -5,10 +5,13 @@ class GafeteController: UIViewController {
     @IBOutlet weak var viewGafete: UIView!
     @IBOutlet weak var viewContacto: UIView!
     @IBOutlet weak var fotoGafete: UIImageView!
+    @IBOutlet weak var menuBoton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.establecerDiseno()
+        self.funcionamientoMenu()
+        self.revealViewController().rearViewRevealOverdraw = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +25,14 @@ class GafeteController: UIViewController {
         self.viewContacto.clipsToBounds = false
         self.viewContacto.layer.cornerRadius = 40
         self.viewContacto.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    }
+    
+    func funcionamientoMenu(){
+        if self.revealViewController() != nil {
+            self.menuBoton.target = self.revealViewController()
+            self.menuBoton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
 }

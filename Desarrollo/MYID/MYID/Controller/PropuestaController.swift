@@ -2,10 +2,12 @@ import UIKit
 
 class PropuestaController: UITableViewController {
     
+    @IBOutlet weak var menuBoton: UIBarButtonItem!
     var propuestas = ["propuesta1", "propuesta2", "propuesta3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.funcionamientoMenu()
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,6 +28,14 @@ class PropuestaController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 120.0;
+    }
+    
+    func funcionamientoMenu(){
+        if self.revealViewController() != nil {
+            self.menuBoton.target = self.revealViewController()
+            self.menuBoton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     @IBAction func eliminarPropuesta(_ sender: UIButton) {

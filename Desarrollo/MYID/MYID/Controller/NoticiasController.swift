@@ -10,10 +10,12 @@ import UIKit
 
 class NoticiasController: UITableViewController {
 
+    @IBOutlet weak var menuBoton: UIBarButtonItem!
     var noticias = ["noticia1", "noticia2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.funcionamientoMenu()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,12 +41,20 @@ class NoticiasController: UITableViewController {
         return 105.0;
     }
 
+    func funcionamientoMenu(){
+        if self.revealViewController() != nil {
+            self.menuBoton.target = self.revealViewController()
+            self.menuBoton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+    
     @IBAction func compartirNoticia(_ sender: UIButton) {
         // tomar url de sender
         let noticiaURL =  [NSURL(string: "https://www.apple.com")]
         let activityViewController = UIActivityViewController(activityItems: noticiaURL , applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
-    
+
     
 }
