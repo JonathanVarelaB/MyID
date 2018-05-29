@@ -160,7 +160,6 @@
                                         </state>
                                         <connections>
                                             <action selector="ingresar:" destination="7We-N9-apa" eventType="touchUpInside" id="KYO-qH-qQK"/>
-                                            <segue destination="bDF-J1-UUR" kind="showDetail" id="RjA-gc-f1k"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -198,12 +197,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="web-UM-EWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2168" y="-1"/>
+            <point key="canvasLocation" x="-866" y="1044"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="dOh-UU-3FM">
             <objects>
-                <viewController id="bDF-J1-UUR" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuSideScreen" id="bDF-J1-UUR" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w49-f3-bcv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gt-0c-RAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1101" y="-1"/>
+            <point key="canvasLocation" x="-368" y="-1"/>
         </scene>
         <!--Menú-->
         <scene sceneID="v0i-6Y-xyj">
@@ -395,7 +394,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5l-FK-K1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1102.5" y="1632.5"/>
+            <point key="canvasLocation" x="-366" y="2184"/>
         </scene>
         <!--Noticias-->
         <scene sceneID="sMX-yu-NnO">
@@ -1482,6 +1481,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="8sX-3f-U2X"/>
         <segue reference="QVt-R2-raO"/>
-        <segue reference="qka-1p-D9n"/>
+        <segue reference="s9q-w0-LVe"/>
     </inferredMetricsTieBreakers>
 </document>

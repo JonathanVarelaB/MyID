@@ -47,8 +47,34 @@ class LoginController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func validacionFormulario() -> String{
+        
+        if self.identificacionText.text == "" || self.claveText.text == "" {
+            return "Datos incompletos"
+        }
+        else{
+            if (self.identificacionText.text?.count)! < 8 {
+                return "La identificación debe de poseer 8 dígitos como mínimo"
+            }
+            else{
+                if (self.claveText.text?.count)! < 5 {
+                    return "La clave debe de poseer 5 dígitos como mínimo"
+                }
+            }
+        }
+        return ""
+    }
+    
     @IBAction func ingresar(_ sender: UIButton) {
-        //print("\(self.identificacionText.text) \(self.claveText.text) \(self.recordarSwitch.isOn)")
+        let mensaje : String = self.validacionFormulario()
+        if mensaje != "" {
+            self.alerta(titulo: "Inicio de Sesión", subtitulo: mensaje, boton: "Aceptar")
+        }
+        else{
+            // consultar Usuario
+            let vc : UIViewController = storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
 }
