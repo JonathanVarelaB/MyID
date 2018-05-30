@@ -34,5 +34,7 @@ class GafeteController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
+ 
+    
     
 }
