@@ -444,9 +444,9 @@
                                                         <constraint firstAttribute="width" constant="22" id="389-vD-Nwf"/>
                                                         <constraint firstAttribute="height" constant="22" id="vRL-G8-9wK"/>
                                                     </constraints>
-                                                    <color key="tintColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal">
-                                                        <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="compartirNoticia:" destination="G3L-y5-bIm" eventType="touchUpInside" id="pNK-UX-5uP"/>
@@ -1032,7 +1032,7 @@
                                             <constraint firstAttribute="bottom" secondItem="vnx-jS-Ru1" secondAttribute="bottom" constant="15" id="yjO-Be-KFq"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge_blanco" translatesAutoresizingMaskIntoConstraints="NO" id="jdM-Of-gao">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge_azul" translatesAutoresizingMaskIntoConstraints="NO" id="jdM-Of-gao">
                                         <rect key="frame" x="101" y="17" width="87" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87" id="0YT-2V-GQZ"/>
@@ -1200,7 +1200,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="GHv-ie-xhU"/>
                                                         <constraint firstAttribute="width" constant="22" id="VoY-6h-dnC"/>
                                                     </constraints>
-                                                    <color key="tintColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal">
                                                         <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -1211,7 +1211,7 @@
                                                         <constraint firstAttribute="width" constant="22" id="Gfw-Le-iW0"/>
                                                         <constraint firstAttribute="height" constant="22" id="SgJ-hQ-qvL"/>
                                                     </constraints>
-                                                    <color key="tintColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal">
                                                         <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -1475,6 +1475,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="badge_azul" width="654" height="980"/>
         <image name="badge_blanco" width="654" height="980"/>
         <image name="userDefault" width="200" height="200"/>
     </resources>
