@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 
 class GafeteController: UIViewController {
     
@@ -12,6 +13,7 @@ class GafeteController: UIViewController {
         self.establecerDiseno()
         self.funcionamientoMenu()
         self.revealViewController().rearViewRevealOverdraw = 0
+        //SVProgressHUD.show()
     }
 
     override func didReceiveMemoryWarning() {

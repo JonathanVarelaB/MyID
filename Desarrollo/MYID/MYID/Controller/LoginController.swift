@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 
 class LoginController: UIViewController, UITextFieldDelegate {
     
@@ -72,9 +73,15 @@ class LoginController: UIViewController, UITextFieldDelegate {
         }
         else{
             // consultar Usuario
-            let vc : UIViewController = storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
-            self.present(vc, animated: true, completion: nil)
+            SVProgressHUD.show(withStatus: "Cargando")
+            Timer.scheduledTimer(timeInterval: 0.5, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
         }
+    }
+    
+    func block(){
+        let vc : UIViewController = storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
+        SVProgressHUD.dismiss()
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

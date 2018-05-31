@@ -538,16 +538,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGp-32-w4x">
-                                                    <rect key="frame" x="10" y="48.5" width="280" height="21"/>
+                                                    <rect key="frame" x="10" y="31.5" width="280" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="aPG-zB-r2u"/>
+                                                        <constraint firstAttribute="height" constant="35" id="H3g-rM-06k"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos los días" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoR-ea-sZf">
-                                                    <rect key="frame" x="153.5" y="3" width="143.5" height="18"/>
+                                                    <rect key="frame" x="153.5" y="5" width="143.5" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="yzg-xC-mto"/>
                                                     </constraints>
@@ -558,13 +558,13 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="yoR-ea-sZf" firstAttribute="top" secondItem="atR-1s-k49" secondAttribute="top" constant="3" id="1Zz-eB-CC9"/>
+                                                <constraint firstItem="yoR-ea-sZf" firstAttribute="top" secondItem="atR-1s-k49" secondAttribute="top" constant="5" id="1Zz-eB-CC9"/>
+                                                <constraint firstAttribute="bottom" secondItem="bGp-32-w4x" secondAttribute="bottom" constant="3" id="2WY-n9-Rei"/>
                                                 <constraint firstItem="id6-P5-c9d" firstAttribute="top" secondItem="atR-1s-k49" secondAttribute="top" constant="5" id="5hO-gi-AuF"/>
-                                                <constraint firstAttribute="bottom" secondItem="bGp-32-w4x" secondAttribute="bottom" id="AW9-7o-TsO"/>
                                                 <constraint firstItem="yoR-ea-sZf" firstAttribute="width" secondItem="id6-P5-c9d" secondAttribute="width" id="KRS-md-o07"/>
-                                                <constraint firstItem="bGp-32-w4x" firstAttribute="leading" secondItem="atR-1s-k49" secondAttribute="leading" constant="10" id="M6E-cW-uuG"/>
                                                 <constraint firstItem="yoR-ea-sZf" firstAttribute="leading" secondItem="id6-P5-c9d" secondAttribute="trailing" id="M7N-Et-4BE"/>
-                                                <constraint firstAttribute="trailing" secondItem="bGp-32-w4x" secondAttribute="trailing" constant="10" id="T7v-Rg-Pw6"/>
+                                                <constraint firstAttribute="trailing" secondItem="bGp-32-w4x" secondAttribute="trailing" constant="10" id="Y2J-N8-TEn"/>
+                                                <constraint firstItem="bGp-32-w4x" firstAttribute="leading" secondItem="atR-1s-k49" secondAttribute="leading" constant="10" id="qUW-wZ-D9S"/>
                                                 <constraint firstItem="id6-P5-c9d" firstAttribute="leading" secondItem="atR-1s-k49" secondAttribute="leading" constant="10" id="rxx-af-vbD"/>
                                                 <constraint firstAttribute="trailing" secondItem="yoR-ea-sZf" secondAttribute="trailing" constant="3" id="sLB-Wj-HYS"/>
                                             </constraints>
@@ -1225,8 +1225,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="51.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1p-FP-Npm">
-                                                            <rect key="frame" x="8" y="13" width="24" height="24"/>
-                                                            <color key="tintColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <rect key="frame" x="7" y="13" width="26" height="26"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="26" id="XC7-bf-mKS"/>
+                                                                <constraint firstAttribute="width" constant="26" id="ZV3-Lz-iHC"/>
+                                                            </constraints>
+                                                            <color key="tintColor" red="0.84607666729999997" green="0.27463918609999999" blue="0.18181226319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="agree">
                                                                 <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
@@ -1234,8 +1238,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="w1p-FP-Npm" firstAttribute="centerY" secondItem="Fhb-b5-b9R" secondAttribute="centerY" id="55T-3p-dhg"/>
-                                                        <constraint firstItem="w1p-FP-Npm" firstAttribute="centerX" secondItem="Fhb-b5-b9R" secondAttribute="centerX" id="RzP-aU-jFz"/>
+                                                        <constraint firstItem="w1p-FP-Npm" firstAttribute="centerX" secondItem="Fhb-b5-b9R" secondAttribute="centerX" id="6sD-MG-80a"/>
+                                                        <constraint firstItem="w1p-FP-Npm" firstAttribute="centerY" secondItem="Fhb-b5-b9R" secondAttribute="centerY" id="AZ9-lQ-S0H"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1247,7 +1251,11 @@
                                                     <rect key="frame" x="0.0" y="53.5" width="40" height="51.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAd-lJ-fke">
-                                                            <rect key="frame" x="8" y="13.5" width="24" height="24"/>
+                                                            <rect key="frame" x="7" y="13.5" width="26" height="26"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="26" id="7Wa-uT-dS8"/>
+                                                                <constraint firstAttribute="width" constant="26" id="Xue-jT-qAe"/>
+                                                            </constraints>
                                                             <color key="tintColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="disagree">
                                                                 <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1256,8 +1264,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="fAd-lJ-fke" firstAttribute="centerY" secondItem="4v9-Yp-Nxa" secondAttribute="centerY" id="PqY-IF-guN"/>
-                                                        <constraint firstItem="fAd-lJ-fke" firstAttribute="centerX" secondItem="4v9-Yp-Nxa" secondAttribute="centerX" id="fBU-H9-etS"/>
+                                                        <constraint firstItem="fAd-lJ-fke" firstAttribute="centerX" secondItem="4v9-Yp-Nxa" secondAttribute="centerX" id="49o-8x-so6"/>
+                                                        <constraint firstItem="fAd-lJ-fke" firstAttribute="centerY" secondItem="4v9-Yp-Nxa" secondAttribute="centerY" id="gcr-Ji-9DB"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1310,6 +1318,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="Noticia Cell"/>
+                                <connections>
+                                    <outlet property="agreeBoton" destination="w1p-FP-Npm" id="dgR-L1-rIh"/>
+                                    <outlet property="disagreeBoton" destination="fAd-lJ-fke" id="vED-hb-Imo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1500,7 +1512,7 @@
     </scenes>
     <resources>
         <image name="agree" width="24" height="24"/>
-        <image name="badge_azul" width="654" height="980"/>
+        <image name="badge_azul" width="327" height="490"/>
         <image name="badge_blanco" width="654" height="980"/>
         <image name="compose" width="23" height="23"/>
         <image name="disagree" width="24" height="24"/>

@@ -1,0 +1,9 @@
+platform :ios, '10.6'
+
+target 'MYID' do
+
+  use_frameworks!
+
+  pod 'SVProgressHUD'
+
+end
