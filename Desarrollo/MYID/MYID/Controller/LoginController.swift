@@ -59,11 +59,19 @@ class LoginController: UIViewController, UITextFieldDelegate {
             }
             else{
                 if (self.claveText.text?.count)! < 5 {
-                    return "La clave debe de poseer 5 dígitos como mínimo"
+                    return "La contraseña debe de poseer 5 dígitos como mínimo"
                 }
             }
         }
         return ""
+    }
+    
+    @IBAction func cambioIdentificacion(_ sender: UITextField) {
+        self.validacionTextField(textField: sender, maxLength: 10)
+    }
+    
+    @IBAction func cambioClave(_ sender: UITextField) {
+        self.validacionTextField(textField: sender, maxLength: 8)
     }
     
     @IBAction func ingresar(_ sender: UIButton) {

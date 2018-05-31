@@ -13,6 +13,7 @@ extension UIView {
 }
 
 extension UIViewController {
+    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -28,5 +29,18 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: boton, style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func validacionTextField(textField: UITextField!, maxLength: Int) {
+        if (textField.text!.count > maxLength) {
+            textField.deleteBackward()
+        }
+        else{
+            let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
+            //let cs = NSCharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted
+            //let filtered = string.components(separatedBy: cs).joined(separator: "")
+            //print()
+        }
+    }
+    
 }
 

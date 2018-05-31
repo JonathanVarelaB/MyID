@@ -76,7 +76,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7i0-ui-kad" userLabel="FormularioInterno">
                                                 <rect key="frame" x="16" y="15" width="288" height="160"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Identificación" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xjI-QZ-F2S">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Identificación" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjI-QZ-F2S">
                                                         <rect key="frame" x="15" y="8" width="257" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="x0P-nz-QPl"/>
@@ -84,6 +84,9 @@
                                                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                                        <connections>
+                                                            <action selector="cambioIdentificacion:" destination="7We-N9-apa" eventType="editingChanged" id="9ve-iB-7ED"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yiz-Fy-whb">
                                                         <rect key="frame" x="15" y="62" width="257" height="30"/>
@@ -93,11 +96,14 @@
                                                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="cambioClave:" destination="7We-N9-apa" eventType="editingChanged" id="dmV-jg-DqM"/>
+                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfB-LQ-KkW" userLabel="Recordar">
                                                         <rect key="frame" x="0.0" y="100" width="288" height="57"/>
                                                         <subviews>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVI-iA-L7p">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DVI-iA-L7p">
                                                                 <rect key="frame" x="17" y="13" width="49" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="31" id="1dI-7J-r9C"/>
@@ -814,16 +820,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z5-c3-UqL">
-                                                    <rect key="frame" x="10" y="48.5" width="280" height="21"/>
+                                                    <rect key="frame" x="10" y="31.5" width="280" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="7Bb-YV-dyz"/>
+                                                        <constraint firstAttribute="height" constant="35" id="fOG-o7-zhK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos los días" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2k8-vi-CK4">
-                                                    <rect key="frame" x="153.5" y="3" width="143.5" height="18"/>
+                                                    <rect key="frame" x="153.5" y="5" width="143.5" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="MeR-qN-068"/>
                                                     </constraints>
@@ -835,14 +841,14 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="2k8-vi-CK4" secondAttribute="trailing" constant="3" id="6mo-wQ-z8O"/>
-                                                <constraint firstItem="8Z5-c3-UqL" firstAttribute="leading" secondItem="j5t-M5-rsR" secondAttribute="leading" constant="10" id="PQ5-Rk-p60"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Z5-c3-UqL" secondAttribute="trailing" constant="10" id="9kg-pb-FsH"/>
+                                                <constraint firstItem="8Z5-c3-UqL" firstAttribute="leading" secondItem="j5t-M5-rsR" secondAttribute="leading" constant="10" id="EnW-zs-NYl"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Z5-c3-UqL" secondAttribute="bottom" constant="3" id="LwM-Uo-J2W"/>
                                                 <constraint firstItem="2k8-vi-CK4" firstAttribute="leading" secondItem="Mnx-8T-ZZ1" secondAttribute="trailing" id="Xa2-Ng-9Uc"/>
                                                 <constraint firstItem="Mnx-8T-ZZ1" firstAttribute="top" secondItem="j5t-M5-rsR" secondAttribute="top" constant="5" id="dMx-wZ-uK5"/>
-                                                <constraint firstAttribute="trailing" secondItem="8Z5-c3-UqL" secondAttribute="trailing" constant="10" id="ghC-T2-CZ3"/>
                                                 <constraint firstItem="Mnx-8T-ZZ1" firstAttribute="leading" secondItem="j5t-M5-rsR" secondAttribute="leading" constant="10" id="irC-H9-rZf"/>
                                                 <constraint firstItem="2k8-vi-CK4" firstAttribute="width" secondItem="Mnx-8T-ZZ1" secondAttribute="width" id="nLg-Db-uGQ"/>
-                                                <constraint firstItem="2k8-vi-CK4" firstAttribute="top" secondItem="j5t-M5-rsR" secondAttribute="top" constant="3" id="o36-oL-aYF"/>
-                                                <constraint firstAttribute="bottom" secondItem="8Z5-c3-UqL" secondAttribute="bottom" id="z1s-Vn-dcO"/>
+                                                <constraint firstItem="2k8-vi-CK4" firstAttribute="top" secondItem="j5t-M5-rsR" secondAttribute="top" constant="5" id="o36-oL-aYF"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -929,16 +935,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-EG-mId">
-                                                    <rect key="frame" x="10" y="48.5" width="280" height="21"/>
+                                                    <rect key="frame" x="10" y="31.5" width="280" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="wtP-WI-hqw"/>
+                                                        <constraint firstAttribute="height" constant="35" id="af6-SO-kje"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos los días" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sv-Pe-vQa">
-                                                    <rect key="frame" x="153.5" y="3" width="143.5" height="18"/>
+                                                    <rect key="frame" x="153.5" y="5" width="143.5" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="ZJO-xA-Gqy"/>
                                                     </constraints>
@@ -951,10 +957,10 @@
                                             <constraints>
                                                 <constraint firstItem="8Sv-Pe-vQa" firstAttribute="leading" secondItem="wkw-fR-Pll" secondAttribute="trailing" id="1AG-ZH-zdb"/>
                                                 <constraint firstItem="wkw-fR-Pll" firstAttribute="leading" secondItem="SYK-xm-z75" secondAttribute="leading" constant="10" id="1Oq-ge-w5Y"/>
-                                                <constraint firstItem="JcF-EG-mId" firstAttribute="leading" secondItem="SYK-xm-z75" secondAttribute="leading" constant="10" id="1VC-be-KlK"/>
-                                                <constraint firstItem="8Sv-Pe-vQa" firstAttribute="top" secondItem="SYK-xm-z75" secondAttribute="top" constant="3" id="IeF-nB-lbQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="JcF-EG-mId" secondAttribute="trailing" constant="10" id="Yzx-nc-KyZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="JcF-EG-mId" secondAttribute="bottom" id="dat-14-oBA"/>
+                                                <constraint firstAttribute="bottom" secondItem="JcF-EG-mId" secondAttribute="bottom" constant="3" id="D9T-6B-7IG"/>
+                                                <constraint firstItem="8Sv-Pe-vQa" firstAttribute="top" secondItem="SYK-xm-z75" secondAttribute="top" constant="5" id="IeF-nB-lbQ"/>
+                                                <constraint firstItem="JcF-EG-mId" firstAttribute="leading" secondItem="SYK-xm-z75" secondAttribute="leading" constant="10" id="LNT-TV-BZr"/>
+                                                <constraint firstAttribute="trailing" secondItem="JcF-EG-mId" secondAttribute="trailing" constant="10" id="T7L-Fu-x4J"/>
                                                 <constraint firstAttribute="trailing" secondItem="8Sv-Pe-vQa" secondAttribute="trailing" constant="3" id="fUb-Su-yNw"/>
                                                 <constraint firstItem="8Sv-Pe-vQa" firstAttribute="width" secondItem="wkw-fR-Pll" secondAttribute="width" id="r9y-l3-OB8"/>
                                                 <constraint firstItem="wkw-fR-Pll" firstAttribute="top" secondItem="SYK-xm-z75" secondAttribute="top" constant="5" id="sAO-gm-lhZ"/>
@@ -1526,7 +1532,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8sX-3f-U2X"/>
-        <segue reference="c24-gW-m9i"/>
+        <segue reference="yXa-5q-249"/>
         <segue reference="s9q-w0-LVe"/>
     </inferredMetricsTieBreakers>
 </document>
