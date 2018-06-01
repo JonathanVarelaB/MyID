@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5420BE8D20C1C37500E5F301 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420BE8C20C1C37500E5F301 /* Usuario.swift */; };
+		5420BE8F20C1DE7100E5F301 /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420BE8E20C1DE7100E5F301 /* Noticia.swift */; };
+		5420BE9120C1DEFE00E5F301 /* Convenio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420BE9020C1DEFE00E5F301 /* Convenio.swift */; };
+		5420BE9320C1DFED00E5F301 /* Propuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420BE9220C1DFED00E5F301 /* Propuesta.swift */; };
+		5420BE9520C1E1D400E5F301 /* PropuestaVotoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420BE9420C1E1D400E5F301 /* PropuestaVotoUsuario.swift */; };
+		5420BE9720C1EF5000E5F301 /* DatosIniciales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420BE9620C1EF5000E5F301 /* DatosIniciales.swift */; };
+		5420BE9920C2065A00E5F301 /* AdministradorBaseDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420BE9820C2065A00E5F301 /* AdministradorBaseDatos.swift */; };
 		54429A7420B8A475004443EC /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54429A7320B8A475004443EC /* extensions.swift */; };
 		5447364E20BDD25E00DABD51 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5447364D20BDD25E00DABD51 /* MenuController.swift */; };
 		54711D9920B5D3B7008CD0F4 /* NoticiaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54711D9820B5D3B7008CD0F4 /* NoticiaCell.swift */; };
@@ -34,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5420BE8C20C1C37500E5F301 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		5420BE8E20C1DE7100E5F301 /* Noticia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
+		5420BE9020C1DEFE00E5F301 /* Convenio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenio.swift; sourceTree = "<group>"; };
+		5420BE9220C1DFED00E5F301 /* Propuesta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Propuesta.swift; sourceTree = "<group>"; };
+		5420BE9420C1E1D400E5F301 /* PropuestaVotoUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropuestaVotoUsuario.swift; sourceTree = "<group>"; };
+		5420BE9620C1EF5000E5F301 /* DatosIniciales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosIniciales.swift; sourceTree = "<group>"; };
+		5420BE9820C2065A00E5F301 /* AdministradorBaseDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministradorBaseDatos.swift; sourceTree = "<group>"; };
 		54429A7320B8A475004443EC /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		5447364D20BDD25E00DABD51 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		54711D9820B5D3B7008CD0F4 /* NoticiaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaCell.swift; sourceTree = "<group>"; };
@@ -132,6 +146,13 @@
 				54711D9820B5D3B7008CD0F4 /* NoticiaCell.swift */,
 				5480450420B6283C00B600EE /* ConvenioCell.swift */,
 				7558389720B7AB17002E6B1C /* PropuestaCell.swift */,
+				5420BE8C20C1C37500E5F301 /* Usuario.swift */,
+				5420BE8E20C1DE7100E5F301 /* Noticia.swift */,
+				5420BE9020C1DEFE00E5F301 /* Convenio.swift */,
+				5420BE9220C1DFED00E5F301 /* Propuesta.swift */,
+				5420BE9420C1E1D400E5F301 /* PropuestaVotoUsuario.swift */,
+				5420BE9620C1EF5000E5F301 /* DatosIniciales.swift */,
+				5420BE9820C2065A00E5F301 /* AdministradorBaseDatos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,22 +326,29 @@
 			files = (
 				5447364E20BDD25E00DABD51 /* MenuController.swift in Sources */,
 				5480450520B6283C00B600EE /* ConvenioCell.swift in Sources */,
+				5420BE8D20C1C37500E5F301 /* Usuario.swift in Sources */,
 				54429A7420B8A475004443EC /* extensions.swift in Sources */,
 				750B80CC20B6543F0005B8B6 /* TiendasController.swift in Sources */,
+				5420BE9320C1DFED00E5F301 /* Propuesta.swift in Sources */,
 				75329FAC20B11C7700B69F7D /* MYID.xcdatamodeld in Sources */,
+				5420BE9120C1DEFE00E5F301 /* Convenio.swift in Sources */,
 				750B80CE20B656E40005B8B6 /* OtrosController.swift in Sources */,
+				5420BE9920C2065A00E5F301 /* AdministradorBaseDatos.swift in Sources */,
 				75B8E64220BD0BAC006FBD01 /* SWRevealViewController.m in Sources */,
 				750B80D020B678600005B8B6 /* MapaController.swift in Sources */,
 				7558389820B7AB17002E6B1C /* PropuestaCell.swift in Sources */,
 				75769DA020B3F2F6006FA061 /* GafeteController.swift in Sources */,
 				54711D9E20B60A3D008CD0F4 /* NoticiaContenidoController.swift in Sources */,
 				75329FBC20B13C2200B69F7D /* LoginController.swift in Sources */,
+				5420BE8F20C1DE7100E5F301 /* Noticia.swift in Sources */,
 				75329FA420B11C7700B69F7D /* AppDelegate.swift in Sources */,
 				7558389C20B7CB35002E6B1C /* EditarPropuestaController.swift in Sources */,
+				5420BE9520C1E1D400E5F301 /* PropuestaVotoUsuario.swift in Sources */,
 				548044FF20B6220300B600EE /* RestaurantesController.swift in Sources */,
 				54711D9B20B5D496008CD0F4 /* NoticiasController.swift in Sources */,
 				75E775AF20B539E90066AAE2 /* EditarGafeteController.swift in Sources */,
 				75B8E64420BD11F1006FBD01 /* ConveniosController.swift in Sources */,
+				5420BE9720C1EF5000E5F301 /* DatosIniciales.swift in Sources */,
 				54711D9920B5D3B7008CD0F4 /* NoticiaCell.swift in Sources */,
 				7558389A20B7AB3C002E6B1C /* PropuestaController.swift in Sources */,
 			);
@@ -471,7 +499,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R55RHEFFZ2;
 				INFOPLIST_FILE = MYID/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvarela.MYID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MYID/Controller/SWRevealViewController/MYID-Bridging-Header.h";
@@ -490,7 +521,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R55RHEFFZ2;
 				INFOPLIST_FILE = MYID/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvarela.MYID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MYID/Controller/SWRevealViewController/MYID-Bridging-Header.h";

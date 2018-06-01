@@ -80,9 +80,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
             self.alerta(titulo: "Inicio de Sesión", subtitulo: mensaje, boton: "Aceptar")
         }
         else{
-            // consultar Usuario
             SVProgressHUD.show(withStatus: "Cargando")
-            Timer.scheduledTimer(timeInterval: 0.5, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
+            //Timer.scheduledTimer(timeInterval: 0.5, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
         }
     }
     

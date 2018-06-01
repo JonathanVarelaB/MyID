@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  MYID
-//
-//  Created by Jonathan Varela on 5/19/18.
-//  Copyright © 2018 Jonathan Varela. All rights reserved.
-//
-
 import UIKit
 import CoreData
 import SVProgressHUD
@@ -16,6 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        AdministradorBaseDatos.instancia.inicializar()
         application.statusBarStyle = .lightContent
         let statusbar = UIApplication.shared.value(forKey: "statusBar") as? UIView
         statusbar?.backgroundColor = UIColor(red: 19.0/255, green: 41.0/255, blue: 59.0/255, alpha: 1.0)

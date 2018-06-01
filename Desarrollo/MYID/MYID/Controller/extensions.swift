@@ -31,14 +31,17 @@ extension UIViewController {
     }
     
     func validacionTextField(textField: UITextField!, maxLength: Int) {
-        if (textField.text!.count > maxLength) {
-            textField.deleteBackward()
-        }
-        else{
-            let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
-            //let cs = NSCharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted
-            //let filtered = string.components(separatedBy: cs).joined(separator: "")
-            //print()
+        if textField.text!.count > 0 {
+            if (textField.text!.count > maxLength) {
+                textField.deleteBackward()
+            }
+            else{
+                let caracter = String((textField.text?.last)!)
+                let regex = try! NSRegularExpression(pattern: ".*[^A-Za-z0-9].*", options: [])
+                if regex.matches(in: caracter, options: [], range: NSRange(location: 0, length: 1)).count > 0 {
+                    textField.deleteBackward()
+                }
+            }
         }
     }
     
