@@ -1,29 +1,21 @@
-//
-//  NoticiaContenidoController.swift
-//  MYID
-//
-//  Created by MacBookDesarrolloTecno01 on 5/23/18.
-//  Copyright © 2018 Jonathan Varela. All rights reserved.
-//
-
 import UIKit
+import SVProgressHUD
 
 class NoticiaContenidoController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webNoticia: UIWebView!
-    @IBOutlet weak var indicadorActividad: UIActivityIndicatorView!
+    var url = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.indicadorActividad.startAnimating()
-        let req = URLRequest(url: URL(string: "https://www.google.co.cr")!)
+        SVProgressHUD.show(withStatus: "Cargando")
+        let req = URLRequest(url: URL(string: self.url)!)
         self.webNoticia.delegate = self
         self.webNoticia.loadRequest(req)
     }
     
     func webViewDidFinishLoad(_ webView : UIWebView) {
-        self.indicadorActividad.stopAnimating()
-        self.indicadorActividad.hidesWhenStopped = true
+        SVProgressHUD.dismiss()
     }
 
     override func didReceiveMemoryWarning() {

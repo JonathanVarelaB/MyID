@@ -18,6 +18,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="MSU-2J-3eS">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -509,7 +510,6 @@
                                     <outlet property="titularTexto" destination="e9X-Xq-QK0" id="MoC-pO-BUW"/>
                                     <outlet property="viewContenedor" destination="z4P-mh-rRD" id="Ytn-RG-IIN"/>
                                     <outlet property="viewSeparador" destination="33C-YM-ne2" id="Peu-X6-qwQ"/>
-                                    <segue destination="ewv-Dn-2Ma" kind="show" id="BOJ-Hf-lj7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -559,12 +559,12 @@
                                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGp-32-w4x">
-                                                    <rect key="frame" x="10" y="31.5" width="280" height="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGp-32-w4x">
+                                                    <rect key="frame" x="10" y="31" width="280" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="H3g-rM-06k"/>
+                                                        <constraint firstAttribute="height" constant="36" id="H3g-rM-06k"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -603,7 +603,6 @@
                                     <outlet property="descripcionTexto" destination="bGp-32-w4x" id="Mrs-u1-7vR"/>
                                     <outlet property="lugarTexto" destination="id6-P5-c9d" id="Pf3-7e-QjV"/>
                                     <outlet property="tiempoTexto" destination="yoR-ea-sZf" id="Dre-SF-w2A"/>
-                                    <segue destination="fmi-oq-xn7" kind="show" id="c24-gW-m9i"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -616,7 +615,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa1-iz-wb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="1453"/>
+            <point key="canvasLocation" x="2090.625" y="1452.5"/>
         </scene>
         <!--Convenios-->
         <scene sceneID="HkA-BH-VKO">
@@ -648,22 +647,15 @@
         <!--Noticia Contenido Controller-->
         <scene sceneID="F9t-nv-6Dk">
             <objects>
-                <viewController id="ewv-Dn-2Ma" customClass="NoticiaContenidoController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticiaContenidoController" id="ewv-Dn-2Ma" customClass="NoticiaContenidoController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7af-Sb-pNC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAt-do-fEd">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-YL-LdB">
-                                <rect key="frame" x="150" y="198" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="mM1-fA-7g9"/>
-                                    <constraint firstAttribute="width" constant="20" id="zq3-zH-TLJ"/>
-                                </constraints>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -671,14 +663,11 @@
                             <constraint firstItem="VAt-do-fEd" firstAttribute="leading" secondItem="pG5-bf-k2a" secondAttribute="leading" id="8CQ-CI-N35"/>
                             <constraint firstItem="VAt-do-fEd" firstAttribute="bottom" secondItem="pG5-bf-k2a" secondAttribute="bottom" id="BDH-CT-BS1"/>
                             <constraint firstItem="VAt-do-fEd" firstAttribute="trailing" secondItem="pG5-bf-k2a" secondAttribute="trailing" id="m1U-JJ-cIm"/>
-                            <constraint firstItem="pnq-YL-LdB" firstAttribute="centerY" secondItem="7af-Sb-pNC" secondAttribute="centerY" id="n6k-YJ-F5e"/>
-                            <constraint firstItem="pnq-YL-LdB" firstAttribute="centerX" secondItem="7af-Sb-pNC" secondAttribute="centerX" id="rNE-5N-CVW"/>
                             <constraint firstItem="VAt-do-fEd" firstAttribute="top" secondItem="pG5-bf-k2a" secondAttribute="top" id="t3I-d7-ghW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pG5-bf-k2a"/>
                     </view>
                     <connections>
-                        <outlet property="indicadorActividad" destination="pnq-YL-LdB" id="hev-RB-fo9"/>
                         <outlet property="webNoticia" destination="VAt-do-fEd" id="bjL-ub-9m7"/>
                     </connections>
                 </viewController>
@@ -689,7 +678,7 @@
         <!--Editar Gafete Controller-->
         <scene sceneID="37W-fc-Qhz">
             <objects>
-                <viewController id="3We-hy-yzf" customClass="EditarGafeteController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditarGafeteController" id="3We-hy-yzf" customClass="EditarGafeteController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4uQ-1I-mJX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -705,6 +694,9 @@
                                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" textContentType="username"/>
+                                        <connections>
+                                            <action selector="cambioTelefono:" destination="3We-hy-yzf" eventType="editingChanged" id="N3d-MV-XJJ"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo Electrónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efL-uM-1q3">
                                         <rect key="frame" x="15" y="140" width="258" height="30"/>
@@ -714,6 +706,9 @@
                                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go" textContentType="username"/>
+                                        <connections>
+                                            <action selector="cambioCorreo:" destination="3We-hy-yzf" eventType="editingChanged" id="NxB-7l-9ct"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G52-GM-m0L">
                                         <rect key="frame" x="15" y="40" width="258" height="30"/>
@@ -723,6 +718,9 @@
                                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                        <connections>
+                                            <action selector="cambioNombre:" destination="3We-hy-yzf" eventType="editingChanged" id="kcY-FF-ayE"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Px0-Uq-63f" userLabel="ViewBotones">
                                         <rect key="frame" x="15" y="294" width="258" height="50"/>
@@ -734,6 +732,9 @@
                                                 <state key="normal" title="Guardar">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="guardarBoton:" destination="3We-hy-yzf" eventType="touchUpInside" id="vBw-sd-vf5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpg-2r-Ema">
                                                 <rect key="frame" x="138" y="0.0" width="120" height="50"/>
@@ -838,12 +839,12 @@
                                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z5-c3-UqL">
-                                                    <rect key="frame" x="10" y="31.5" width="280" height="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z5-c3-UqL">
+                                                    <rect key="frame" x="10" y="31" width="280" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="fOG-o7-zhK"/>
+                                                        <constraint firstAttribute="height" constant="36" id="fOG-o7-zhK"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -882,7 +883,6 @@
                                     <outlet property="descripcionTexto" destination="8Z5-c3-UqL" id="v5t-au-FLC"/>
                                     <outlet property="lugarTexto" destination="Mnx-8T-ZZ1" id="LvB-fS-Sn9"/>
                                     <outlet property="tiempoTexto" destination="2k8-vi-CK4" id="CuQ-J0-8EQ"/>
-                                    <segue destination="fmi-oq-xn7" kind="show" id="yXa-5q-249"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -897,18 +897,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ4-r8-uhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921" y="1453"/>
+            <point key="canvasLocation" x="2919.375" y="1452.5"/>
         </scene>
         <!--Mapa Controller-->
         <scene sceneID="fat-PS-GJ3">
             <objects>
-                <viewController id="fmi-oq-xn7" customClass="MapaController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapaController" id="fmi-oq-xn7" customClass="MapaController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gt-ef-xc2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cBR-Mj-bAt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -926,7 +926,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WU-At-7tM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4536" y="1453"/>
+            <point key="canvasLocation" x="4524" y="1453"/>
         </scene>
         <!--Otros-->
         <scene sceneID="tVv-bw-TtM">
@@ -956,12 +956,12 @@
                                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-EG-mId">
-                                                    <rect key="frame" x="10" y="31.5" width="280" height="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-EG-mId">
+                                                    <rect key="frame" x="10" y="31" width="280" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="af6-SO-kje"/>
+                                                        <constraint firstAttribute="height" constant="36" id="af6-SO-kje"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1000,7 +1000,6 @@
                                     <outlet property="descripcionTexto" destination="JcF-EG-mId" id="2R0-Xz-TA7"/>
                                     <outlet property="lugarTexto" destination="wkw-fR-Pll" id="Kt2-H9-v5h"/>
                                     <outlet property="tiempoTexto" destination="8Sv-Pe-vQa" id="tL4-Tb-NqH"/>
-                                    <segue destination="fmi-oq-xn7" kind="show" id="QVt-R2-raO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1015,7 +1014,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tll-vE-EX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3722" y="1453"/>
+            <point key="canvasLocation" x="3721.875" y="1452.5"/>
         </scene>
         <!--Gafete-->
         <scene sceneID="VjL-Kj-Ms6">
@@ -1160,7 +1159,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="enn-AW-edg">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="3We-hy-yzf" kind="presentation" id="Pvh-VO-R7T"/>
+                                <action selector="editarGafete:" destination="USd-U6-XUf" id="QN5-ze-FXq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1562,7 +1561,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8sX-3f-U2X"/>
-        <segue reference="c24-gW-m9i"/>
         <segue reference="s9q-w0-LVe"/>
     </inferredMetricsTieBreakers>
 </document>

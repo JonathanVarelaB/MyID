@@ -14,15 +14,26 @@ class RestaurantesController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentCell = tableView.cellForRow(at: indexPath) as! ConvenioCell
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "MapaController") as! MapaController
+        vc.latitud = currentCell.latitud
+        vc.longitud = currentCell.longitud
+        vc.lugarNombre = currentCell.lugarTexto.text!
+        navigationController?.show(vc, sender: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.restaurantes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Convenio Cell", for: indexPath) as! ConvenioCell
-        
-        //cell.labelCel.text = self.noticias[indexPath.row]
-        //cell.imagenCell.image = UIImage(named: self.noticias[indexPath.row])
+        cell.descripcionTexto.text = self.restaurantes[indexPath.row].descripcion
+        cell.lugarTexto.text = self.restaurantes[indexPath.row].lugar
+        cell.tiempoTexto.text = self.restaurantes[indexPath.row].tiempo
+        cell.longitud = Double(self.restaurantes[indexPath.row].longitud)!
+        cell.latitud = Double(self.restaurantes[indexPath.row].latitud)!
         return cell
     }
     
@@ -43,5 +54,7 @@ class RestaurantesController: UITableViewController {
             }
         })
     }
+    
+    
     
 }

@@ -17,7 +17,6 @@ class NoticiasController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(self.noticias.count)
         return self.noticias.count
     }
     
@@ -28,11 +27,16 @@ class NoticiasController: UITableViewController {
         cell.viewSeparador.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         cell.titularTexto.text = self.noticias[indexPath.row].titular
         cell.fechaTexto.text = self.noticias[indexPath.row].fecha
+        cell.enlace = self.noticias[indexPath.row].enlace
+        cell.compartirBoton.tag = indexPath.row
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let currentCell = tableView.cellForRow(at: indexPath) as! NoticiaCell
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "NoticiaContenidoController") as! NoticiaContenidoController
+        vc.url = currentCell.enlace
+        navigationController?.show(vc, sender: nil)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
@@ -48,9 +52,10 @@ class NoticiasController: UITableViewController {
     }
     
     @IBAction func compartirNoticia(_ sender: UIButton) {
-        // tomar url de sender
-        let noticiaURL =  [NSURL(string: "https://www.apple.com")]
-        let activityViewController = UIActivityViewController(activityItems: noticiaURL , applicationActivities: nil)
+        let indexpath = IndexPath(row: sender.tag, section: 0)
+        let currentCell = tableView.cellForRow(at: indexpath) as! NoticiaCell
+        let noticiaURL =  [NSURL(string: currentCell.enlace)]
+        let activityViewController = UIActivityViewController(activityItems: noticiaURL, applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
     

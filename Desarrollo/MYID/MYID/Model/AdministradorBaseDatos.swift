@@ -43,20 +43,22 @@ class AdministradorBaseDatos{
     }
     
     func verificarCredenciales(identificacion: String, clave: String, recordar: Bool, onSuccess: @escaping(Bool) -> Void){
-        let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "' AND clave == '" + clave + "'")
-        if usuario.count > 0 {
-            if recordar {
-                let usuarios = self.realm.objects(Usuario.self)
-                try! self.realm.write {
-                    usuarios.map{ $0.recordar = false }
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "' AND clave == '" + clave + "'")
+            if usuario.count > 0 {
+                if recordar {
+                    let usuarios = self.realm.objects(Usuario.self)
+                    try! self.realm.write {
+                        usuarios.map{ $0.recordar = false }
+                    }
                 }
+                try! self.realm.write{
+                    usuario[0].recordar = recordar
+                }
+                onSuccess(true)
             }
-            try! self.realm.write{
-                usuario[0].recordar = recordar
-            }
-            onSuccess(true)
-        }
-        onSuccess(false)
+            onSuccess(false)
+        })
     }
     
     func verificarUsuarioRecordado(onSuccess: @escaping(String) -> Void){
@@ -87,13 +89,35 @@ class AdministradorBaseDatos{
     }
     
     func cargarNoticias(onSuccess: @escaping([Noticia]) -> Void){
-        let noticias = self.realm.objects(Noticia.self)
-        onSuccess(Array(noticias))
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let noticias = self.realm.objects(Noticia.self)
+            onSuccess(Array(noticias))
+        })
     }
     
     func cargarConvenios(tipo: Int, onSuccess: @escaping([Convenio]) -> Void){
-        let convenios = self.realm.objects(Convenio.self).filter("tipo == \(tipo)")
-        onSuccess(Array(convenios))
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let convenios = self.realm.objects(Convenio.self).filter("tipo == \(tipo)")
+            onSuccess(Array(convenios))
+        })
     }
     
+    func editarUsuario(identificacion: String, nombre: String, telefono: String, correo: String, onSuccess: @escaping(Bool) -> Void){
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "'")
+            if usuario.count > 0 {
+                try! self.realm.write{
+                    usuario[0].nombre = nombre
+                    usuario[0].telefono = telefono
+                    usuario[0].correo = correo
+                }
+                onSuccess(true)
+            }
+            onSuccess(false)
+        })
+    }
+    
+    func prueba(){
+        
+    }
 }

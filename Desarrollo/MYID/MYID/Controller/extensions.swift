@@ -30,14 +30,15 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func validacionTextField(textField: UITextField!, maxLength: Int) {
+    func validacionTextField(textField: UITextField!, maxLength: Int, conEspacio: Bool) {
         if textField.text!.count > 0 {
             if (textField.text!.count > maxLength) {
                 textField.deleteBackward()
             }
             else{
                 let caracter = String((textField.text?.last)!)
-                let regex = try! NSRegularExpression(pattern: ".*[^A-Za-z0-9].*", options: [])
+                let expresionConEspacio = (conEspacio) ? ".*[^A-Za-z0-9 ].*" : ".*[^A-Za-z0-9].*"
+                let regex = try! NSRegularExpression(pattern: expresionConEspacio, options: [])
                 if regex.matches(in: caracter, options: [], range: NSRange(location: 0, length: 1)).count > 0 {
                     textField.deleteBackward()
                 }

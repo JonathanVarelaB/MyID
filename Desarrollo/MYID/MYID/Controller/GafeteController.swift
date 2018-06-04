@@ -15,6 +15,7 @@ class GafeteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(GafeteController.cargarUsuario),name: NSNotification.Name(rawValue: "modalIsDimissed"),object: nil)
         self.establecerDiseno()
         self.funcionamientoMenu()
         self.revealViewController().rearViewRevealOverdraw = 0
@@ -41,8 +42,8 @@ class GafeteController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
- 
-    func cargarUsuario(){
+    
+    @objc func cargarUsuario(){
         SVProgressHUD.show(withStatus: "Cargando")
         AdministradorBaseDatos.instancia.cargarUsuario(identificacion: AdministradorBaseDatos.idUsuarioActual, onSuccess: { array in
             DispatchQueue.main.async {
@@ -58,6 +59,14 @@ class GafeteController: UIViewController {
                 SVProgressHUD.dismiss()
             }
         })
+    }
+    
+    @IBAction func editarGafete(_ sender: UIBarButtonItem) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "EditarGafeteController") as! EditarGafeteController
+        vc.correo = self.correoText.text!
+        vc.nom = self.nombreText.text!
+        vc.tel = self.telefonoText.text!
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

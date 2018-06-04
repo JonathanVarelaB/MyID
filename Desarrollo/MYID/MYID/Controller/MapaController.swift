@@ -4,6 +4,9 @@ import MapKit
 class MapaController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    var latitud = 0.0
+    var longitud = 0.0
+    var lugarNombre = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,11 +18,11 @@ class MapaController: UIViewController {
     }
     
     func preparacionMapa(){
-        let coordinada = CLLocationCoordinate2D(latitude: 9.932316199999999, longitude: -84.03103390000001)
+        let coordinada = CLLocationCoordinate2D(latitude: self.latitud, longitude: self.longitud)
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinada, 4000, 4000)
         let lugar = MKPointAnnotation();
         lugar.coordinate = coordinada;
-        lugar.title = "Pops"
+        lugar.title = self.lugarNombre
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotation(lugar);
     }

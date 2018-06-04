@@ -32,6 +32,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillShow(sender: NSNotification) {
+        /*
+        var keyboardHeight : CGFloat! = nil
+        if let keyboardFrame: NSValue = sender.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+        self.view.frame.origin.y = (keyboardHeight * -1)
+         */
         self.view.frame.origin.y = -150
     }
     
@@ -68,11 +75,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cambioIdentificacion(_ sender: UITextField) {
-        self.validacionTextField(textField: sender, maxLength: 10)
+        self.validacionTextField(textField: sender, maxLength: 10, conEspacio: false)
     }
     
     @IBAction func cambioClave(_ sender: UITextField) {
-        self.validacionTextField(textField: sender, maxLength: 8)
+        self.validacionTextField(textField: sender, maxLength: 8, conEspacio: false)
     }
     
     @IBAction func ingresar(_ sender: UIButton) {
