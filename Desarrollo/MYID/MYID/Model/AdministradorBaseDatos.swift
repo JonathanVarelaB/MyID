@@ -3,11 +3,12 @@ import RealmSwift
 
 class AdministradorBaseDatos{
     
+    let realm = try! Realm()
     static let instancia = AdministradorBaseDatos()
+    static var idUsuarioActual = ""
     
     func inicializar(){
-        let realm = try! Realm()
-        let usuariosCantidad = realm.objects(Usuario.self).count
+        let usuariosCantidad = self.realm.objects(Usuario.self).count
         if usuariosCantidad < 1 {
             print("Llenado de BD")
             let datos = DatosIniciales()
@@ -39,6 +40,60 @@ class AdministradorBaseDatos{
         print("Noticias: \( realm.objects(Noticia.self).count)")
         print("Convenios: \( realm.objects(Convenio.self).count)")
         print("Propuestas: \( realm.objects(Propuesta.self).count)")
+    }
+    
+    func verificarCredenciales(identificacion: String, clave: String, recordar: Bool, onSuccess: @escaping(Bool) -> Void){
+        let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "' AND clave == '" + clave + "'")
+        if usuario.count > 0 {
+            if recordar {
+                let usuarios = self.realm.objects(Usuario.self)
+                try! self.realm.write {
+                    usuarios.map{ $0.recordar = false }
+                }
+            }
+            try! self.realm.write{
+                usuario[0].recordar = recordar
+            }
+            onSuccess(true)
+        }
+        onSuccess(false)
+    }
+    
+    func verificarUsuarioRecordado(onSuccess: @escaping(String) -> Void){
+        var identificacion = ""
+        let usuario = self.realm.objects(Usuario.self).filter("recordar == true")
+        if usuario.count > 0 {
+            identificacion = usuario[0].identificacion
+        }
+        onSuccess(identificacion)
+    }
+    
+    func olvidarUsuario(identificacion: String, onSuccess: @escaping(Bool) -> Void){
+        let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "'")
+        if usuario.count > 0 {
+            try! self.realm.write{
+                usuario[0].recordar = false
+            }
+        }
+        onSuccess(true)
+    }
+    
+    func cargarUsuario(identificacion: String, onSuccess: @escaping([Any]) -> Void){
+        let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "'")
+        if usuario.count > 0 {
+            onSuccess([usuario[0]])
+        }
+        onSuccess([])
+    }
+    
+    func cargarNoticias(onSuccess: @escaping([Noticia]) -> Void){
+        let noticias = self.realm.objects(Noticia.self)
+        onSuccess(Array(noticias))
+    }
+    
+    func cargarConvenios(tipo: Int, onSuccess: @escaping([Convenio]) -> Void){
+        let convenios = self.realm.objects(Convenio.self).filter("tipo == \(tipo)")
+        onSuccess(Array(convenios))
     }
     
 }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +34,7 @@
         <!--Login Controller-->
         <scene sceneID="14I-mo-eJV">
             <objects>
-                <viewController id="7We-N9-apa" customClass="LoginController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreen" id="7We-N9-apa" customClass="LoginController" customModule="MYID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x6r-Ao-JHn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -358,7 +359,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-xm-PGJ">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-xm-PGJ">
                                                     <rect key="frame" x="197" y="15" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="onTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -375,14 +376,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IY-he-H8c">
-                                                    <rect key="frame" x="16" y="17" width="31" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-3O-sAX">
+                                                    <rect key="frame" x="16" y="11" width="228" height="33"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Salir">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="salirBoton:" destination="ETW-6u-JTG" eventType="touchUpInside" id="KjU-ep-U9t"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="o7p-3O-sAX" secondAttribute="trailing" id="1fP-kS-fYP"/>
+                                                <constraint firstItem="o7p-3O-sAX" firstAttribute="top" secondItem="dtb-WA-WxH" secondAttribute="topMargin" id="NJe-4r-MLD"/>
+                                                <constraint firstItem="o7p-3O-sAX" firstAttribute="leading" secondItem="dtb-WA-WxH" secondAttribute="leadingMargin" id="d2G-hh-UZ0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="o7p-3O-sAX" secondAttribute="bottom" id="ffA-mS-SC1"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="300" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -397,10 +407,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Menú" id="Xf5-D8-M6e"/>
                     <size key="freeformSize" width="260" height="480"/>
+                    <connections>
+                        <outlet property="salirBoton" destination="o7p-3O-sAX" id="AQa-JU-Bjp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5l-FK-K1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-366" y="2184"/>
+            <point key="canvasLocation" x="-367.5" y="2183.75"/>
         </scene>
         <!--Noticias-->
         <scene sceneID="sMX-yu-NnO">
@@ -428,13 +441,13 @@
                                                         <constraint firstAttribute="width" constant="10" id="UNR-Dr-01s"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuatro nuevas aerolíneas domesticas operarían a final de 2018" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9X-Xq-QK0">
-                                                    <rect key="frame" x="25" y="5" width="228" height="60"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9X-Xq-QK0">
+                                                    <rect key="frame" x="25" y="5" width="225" height="60"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 mayo 2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYf-IO-wpe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYf-IO-wpe">
                                                     <rect key="frame" x="150" y="67" width="130" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="92Q-ef-R0F"/>
@@ -445,10 +458,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-50-BxJ">
-                                                    <rect key="frame" x="260" y="8" width="22" height="22"/>
+                                                    <rect key="frame" x="257" y="8" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="22" id="389-vD-Nwf"/>
-                                                        <constraint firstAttribute="height" constant="22" id="vRL-G8-9wK"/>
+                                                        <constraint firstAttribute="width" constant="25" id="389-vD-Nwf"/>
+                                                        <constraint firstAttribute="height" constant="25" id="vRL-G8-9wK"/>
                                                     </constraints>
                                                     <color key="tintColor" red="0.074509803920000006" green="0.16078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="share">
@@ -491,6 +504,9 @@
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="Noticia Cell"/>
                                 <connections>
+                                    <outlet property="compartirBoton" destination="m6n-50-BxJ" id="NY0-bE-sSF"/>
+                                    <outlet property="fechaTexto" destination="SYf-IO-wpe" id="r8t-wU-n8N"/>
+                                    <outlet property="titularTexto" destination="e9X-Xq-QK0" id="MoC-pO-BUW"/>
                                     <outlet property="viewContenedor" destination="z4P-mh-rRD" id="Ytn-RG-IIN"/>
                                     <outlet property="viewSeparador" destination="33C-YM-ne2" id="Peu-X6-qwQ"/>
                                     <segue destination="ewv-Dn-2Ma" kind="show" id="BOJ-Hf-lj7"/>
@@ -584,6 +600,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descripcionTexto" destination="bGp-32-w4x" id="Mrs-u1-7vR"/>
+                                    <outlet property="lugarTexto" destination="id6-P5-c9d" id="Pf3-7e-QjV"/>
+                                    <outlet property="tiempoTexto" destination="yoR-ea-sZf" id="Dre-SF-w2A"/>
                                     <segue destination="fmi-oq-xn7" kind="show" id="c24-gW-m9i"/>
                                 </connections>
                             </tableViewCell>
@@ -860,6 +879,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descripcionTexto" destination="8Z5-c3-UqL" id="v5t-au-FLC"/>
+                                    <outlet property="lugarTexto" destination="Mnx-8T-ZZ1" id="LvB-fS-Sn9"/>
+                                    <outlet property="tiempoTexto" destination="2k8-vi-CK4" id="CuQ-J0-8EQ"/>
                                     <segue destination="fmi-oq-xn7" kind="show" id="yXa-5q-249"/>
                                 </connections>
                             </tableViewCell>
@@ -975,6 +997,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descripcionTexto" destination="JcF-EG-mId" id="2R0-Xz-TA7"/>
+                                    <outlet property="lugarTexto" destination="wkw-fR-Pll" id="Kt2-H9-v5h"/>
+                                    <outlet property="tiempoTexto" destination="8Sv-Pe-vQa" id="tL4-Tb-NqH"/>
                                     <segue destination="fmi-oq-xn7" kind="show" id="QVt-R2-raO"/>
                                 </connections>
                             </tableViewCell>
@@ -1140,8 +1165,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="correoText" destination="vnx-jS-Ru1" id="Y3t-7d-9oJ"/>
                         <outlet property="fotoGafete" destination="dxF-Tf-E31" id="ArD-7Y-wNv"/>
+                        <outlet property="identificacionText" destination="TRP-qs-3dj" id="Wor-gO-lUt"/>
                         <outlet property="menuBoton" destination="eE6-TS-ANo" id="uqy-UT-5ou"/>
+                        <outlet property="nombreText" destination="w5S-Qx-c4U" id="RwN-mc-1o6"/>
+                        <outlet property="puestoText" destination="kgA-PK-ptB" id="yrT-Es-8K0"/>
+                        <outlet property="telefonoText" destination="6ho-IL-5fv" id="zrF-zw-56K"/>
                         <outlet property="viewContacto" destination="RYu-Zn-vED" id="cib-af-uRW"/>
                         <outlet property="viewGafete" destination="CJw-fD-35Y" id="lW5-lw-kyt"/>
                     </connections>
@@ -1532,7 +1562,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8sX-3f-U2X"/>
-        <segue reference="yXa-5q-249"/>
+        <segue reference="c24-gW-m9i"/>
         <segue reference="s9q-w0-LVe"/>
     </inferredMetricsTieBreakers>
 </document>

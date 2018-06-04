@@ -1,20 +1,14 @@
-//
-//  NoticiasController.swift
-//  MYID
-//
-//  Created by MacBookDesarrolloTecno01 on 5/23/18.
-//  Copyright © 2018 Jonathan Varela. All rights reserved.
-//
-
 import UIKit
+import SVProgressHUD
 
 class NoticiasController: UITableViewController {
 
     @IBOutlet weak var menuBoton: UIBarButtonItem!
-    var noticias = ["noticia1", "noticia2"]
+    var noticias: [Noticia] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cargarNoticias()
         self.funcionamientoMenu()
     }
 
@@ -23,6 +17,7 @@ class NoticiasController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(self.noticias.count)
         return self.noticias.count
     }
     
@@ -31,16 +26,19 @@ class NoticiasController: UITableViewController {
         cell.viewSeparador.clipsToBounds = false
         cell.viewSeparador.layer.cornerRadius = 10
         cell.viewSeparador.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-        //cell.labelCel.text = self.noticias[indexPath.row]
-        //cell.imagenCell.image = UIImage(named: self.noticias[indexPath.row])
-        // asignar URL a alguna propiedad del boton para poder compartir
+        cell.titularTexto.text = self.noticias[indexPath.row].titular
+        cell.fechaTexto.text = self.noticias[indexPath.row].fecha
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 105.0;
     }
-
+    
     func funcionamientoMenu(){
         if self.revealViewController() != nil {
             self.menuBoton.target = self.revealViewController()
@@ -55,6 +53,19 @@ class NoticiasController: UITableViewController {
         let activityViewController = UIActivityViewController(activityItems: noticiaURL , applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
-
+    
+    func cargarNoticias(){
+        print("Cargar Noticias")
+        SVProgressHUD.show(withStatus: "Cargando")
+        AdministradorBaseDatos.instancia.cargarNoticias(onSuccess: { noticiasArray in
+            DispatchQueue.main.async {
+                if noticiasArray.count > 0{
+                    self.noticias = noticiasArray
+                    self.tableView.reloadData()
+                }
+                SVProgressHUD.dismiss()
+            }
+        })
+    }
     
 }

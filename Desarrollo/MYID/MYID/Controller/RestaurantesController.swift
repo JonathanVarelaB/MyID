@@ -1,11 +1,13 @@
 import UIKit
+import SVProgressHUD
 
 class RestaurantesController: UITableViewController {
     
-    var restaurantes = ["restaurante1", "restaurante2"]
+    var restaurantes: [Convenio] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cargarRestaurantes()
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,4 +30,18 @@ class RestaurantesController: UITableViewController {
         return 80.0;
     }
 
+    func cargarRestaurantes(){
+        print("Cargar Restaurantes")
+        SVProgressHUD.show(withStatus: "Cargando")
+        AdministradorBaseDatos.instancia.cargarConvenios(tipo: 1, onSuccess: { restaurantesArray in
+            DispatchQueue.main.async {
+                if restaurantesArray.count > 0{
+                    self.restaurantes = restaurantesArray
+                    self.tableView.reloadData()
+                }
+                SVProgressHUD.dismiss()
+            }
+        })
+    }
+    
 }

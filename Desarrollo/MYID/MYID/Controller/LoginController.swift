@@ -9,6 +9,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.verificarUsuarioRecordado()
         self.establecerDiseno()
         self.eventosTeclado()
         self.identificacionText.delegate = self
@@ -81,14 +82,36 @@ class LoginController: UIViewController, UITextFieldDelegate {
         }
         else{
             SVProgressHUD.show(withStatus: "Cargando")
-            //Timer.scheduledTimer(timeInterval: 0.5, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
+            AdministradorBaseDatos.instancia.verificarCredenciales(
+                identificacion: self.identificacionText.text!, clave: self.claveText.text!, recordar: self.recordarSwitch.isOn
+                , onSuccess: { respuesta in
+                    DispatchQueue.main.async {
+                        if respuesta {
+                            AdministradorBaseDatos.idUsuarioActual = self.identificacionText.text!
+                            let vc : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
+                            SVProgressHUD.dismiss()
+                            self.present(vc, animated: true, completion: nil)
+                        }
+                        else{
+                            SVProgressHUD.dismiss()
+                            self.claveText.text = ""
+                            self.alerta(titulo: "Inicio de Sesión", subtitulo: "Datos incorrectos, intente de nuevo", boton: "Aceptar")
+                        }
+                    }
+            })
         }
     }
     
-    func block(){
-        let vc : UIViewController = storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
-        SVProgressHUD.dismiss()
-        self.present(vc, animated: true, completion: nil)
+    func verificarUsuarioRecordado(){
+        AdministradorBaseDatos.instancia.verificarUsuarioRecordado(onSuccess: { identificacion in
+                DispatchQueue.main.async {
+                    if identificacion != "" {
+                        AdministradorBaseDatos.idUsuarioActual = identificacion
+                        let vc : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+        })
     }
     
 }
