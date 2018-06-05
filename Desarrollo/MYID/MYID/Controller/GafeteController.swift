@@ -55,7 +55,12 @@ class GafeteController: UIViewController, UINavigationControllerDelegate, UIImag
                     self.identificacionText.text = usuario.identificacion
                     self.telefonoText.text = usuario.telefono
                     self.correoText.text = usuario.correo
-                    self.fotoGafete.image = UIImage(named: usuario.foto)
+                    if let image = AdministradorImagenes.instancia.obtenerImagen(nombre: usuario.identificacion) {
+                        self.fotoGafete.image = image
+                    }
+                    else{
+                        self.fotoGafete.image = UIImage(named: "userDefault")
+                    }
                 }
                 SVProgressHUD.dismiss()
             }
@@ -78,12 +83,8 @@ class GafeteController: UIViewController, UINavigationControllerDelegate, UIImag
     
     @objc func showActionSheet() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camara", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-            self.camara()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Galería", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-            self.galeria()
-        }))
+        actionSheet.addAction(UIAlertAction(title: "Cámara", style: .default, handler: { (alert:UIAlertAction!) -> Void in self.camara() }))
+        actionSheet.addAction(UIAlertAction(title: "Galería", style: .default, handler: { (alert:UIAlertAction!) -> Void in self.galeria() }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
@@ -95,6 +96,9 @@ class GafeteController: UIViewController, UINavigationControllerDelegate, UIImag
             myPickerController.sourceType = .camera
             self.present(myPickerController, animated: true, completion: nil)
         }
+        else{
+            self.alerta(titulo: "Gafete", subtitulo: "No se puede acceder a la cámara", boton: "Aceptar")
+        }
     }
     
     func galeria(){
@@ -104,6 +108,9 @@ class GafeteController: UIViewController, UINavigationControllerDelegate, UIImag
             myPickerController.sourceType = .photoLibrary
             self.present(myPickerController, animated: true, completion: nil)
         }
+        else{
+            self.alerta(titulo: "Gafete", subtitulo: "No se puede acceder a la galería", boton: "Aceptar")
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -112,15 +119,15 @@ class GafeteController: UIViewController, UINavigationControllerDelegate, UIImag
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            //self.fotoGafete.image = image
             self.guardarNuevaFoto(image: image)
         }
+        else{
+            self.alerta(titulo: "Gafete", subtitulo: "Hubo un error, intente de nuevo.", boton: "Aceptar")
+        }
         self.dismiss(animated: true, completion: nil)
-        //self.guardarNuevaFoto(image: self.fotoGafete.image!)
     }
     
     func guardarNuevaFoto(image: UIImage){
-        print("Guardando foto")
         SVProgressHUD.show(withStatus: "Cargando")
         AdministradorBaseDatos.instancia.editarFotoUsuario(identificacion: AdministradorBaseDatos.idUsuarioActual, foto: image,
             onSuccess: { respuesta in

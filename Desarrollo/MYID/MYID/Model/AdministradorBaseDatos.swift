@@ -6,6 +6,7 @@ class AdministradorBaseDatos{
     let realm = try! Realm()
     static let instancia = AdministradorBaseDatos()
     static var idUsuarioActual = ""
+    static var recordarUsuario = false
     
     func inicializar(){
         let usuariosCantidad = self.realm.objects(Usuario.self).count
@@ -57,7 +58,9 @@ class AdministradorBaseDatos{
                 }
                 onSuccess(true)
             }
-            onSuccess(false)
+            else{
+                onSuccess(false)
+            }
         })
     }
     
@@ -76,8 +79,11 @@ class AdministradorBaseDatos{
             try! self.realm.write{
                 usuario[0].recordar = false
             }
+            onSuccess(true)
         }
-        onSuccess(true)
+        else{
+            onSuccess(false)
+        }
     }
     
     func cargarUsuario(identificacion: String, onSuccess: @escaping([Any]) -> Void){
@@ -85,7 +91,9 @@ class AdministradorBaseDatos{
         if usuario.count > 0 {
             onSuccess([usuario[0]])
         }
-        onSuccess([])
+        else{
+            onSuccess([])
+        }
     }
     
     func cargarNoticias(onSuccess: @escaping([Noticia]) -> Void){
@@ -102,6 +110,13 @@ class AdministradorBaseDatos{
         })
     }
     
+    func cargarPropuestas(onSuccess: @escaping([Propuesta]) -> Void){
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let propuestas = self.realm.objects(Propuesta.self)
+            onSuccess(Array(propuestas))
+        })
+    }
+    
     func editarUsuario(identificacion: String, nombre: String, telefono: String, correo: String, onSuccess: @escaping(Bool) -> Void){
         Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
             let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "'")
@@ -113,7 +128,9 @@ class AdministradorBaseDatos{
                 }
                 onSuccess(true)
             }
-            onSuccess(false)
+            else{
+                onSuccess(false)
+            }
         })
     }
     
@@ -121,12 +138,30 @@ class AdministradorBaseDatos{
         Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
             let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "'")
             if usuario.count > 0 {
-                try! self.realm.write{
-                    //usuario[0].foto = foto
+                if AdministradorImagenes.instancia.guardarImagen(image: foto, nombre: identificacion){
+                    try! self.realm.write{
+                        usuario[0].foto = identificacion
+                    }
+                    onSuccess(true)
                 }
-                onSuccess(true)
+                else{
+                    onSuccess(false)
+                }
             }
-            onSuccess(false)
+            else{
+                onSuccess(false)
+            }
         })
     }
+    
+    func obtenerNombreUsuario(identificacion: String, onSuccess: @escaping(String) -> Void){
+        let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "'")
+        if usuario.count > 0 {
+            onSuccess(usuario[0].nombre)
+        }
+        else{
+            onSuccess("")
+        }
+    }
+    
 }

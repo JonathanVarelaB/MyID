@@ -21,6 +21,7 @@
 		54711D9E20B60A3D008CD0F4 /* NoticiaContenidoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54711D9D20B60A3D008CD0F4 /* NoticiaContenidoController.swift */; };
 		548044FF20B6220300B600EE /* RestaurantesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548044FE20B6220300B600EE /* RestaurantesController.swift */; };
 		5480450520B6283C00B600EE /* ConvenioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5480450420B6283C00B600EE /* ConvenioCell.swift */; };
+		54B44D7320C6E928000A2ED6 /* AdministradorImagenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B44D7220C6E928000A2ED6 /* AdministradorImagenes.swift */; };
 		750B80CC20B6543F0005B8B6 /* TiendasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B80CB20B6543F0005B8B6 /* TiendasController.swift */; };
 		750B80CE20B656E40005B8B6 /* OtrosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B80CD20B656E40005B8B6 /* OtrosController.swift */; };
 		750B80D020B678600005B8B6 /* MapaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B80CF20B678600005B8B6 /* MapaController.swift */; };
@@ -55,6 +56,7 @@
 		54711D9D20B60A3D008CD0F4 /* NoticiaContenidoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaContenidoController.swift; sourceTree = "<group>"; };
 		548044FE20B6220300B600EE /* RestaurantesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantesController.swift; sourceTree = "<group>"; };
 		5480450420B6283C00B600EE /* ConvenioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenioCell.swift; sourceTree = "<group>"; };
+		54B44D7220C6E928000A2ED6 /* AdministradorImagenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministradorImagenes.swift; sourceTree = "<group>"; };
 		575E80046BDE2CE3BA9369A8 /* Pods_MYID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		750B80CB20B6543F0005B8B6 /* TiendasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiendasController.swift; sourceTree = "<group>"; };
 		750B80CD20B656E40005B8B6 /* OtrosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtrosController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				5420BE9420C1E1D400E5F301 /* PropuestaVotoUsuario.swift */,
 				5420BE9620C1EF5000E5F301 /* DatosIniciales.swift */,
 				5420BE9820C2065A00E5F301 /* AdministradorBaseDatos.swift */,
+				54B44D7220C6E928000A2ED6 /* AdministradorImagenes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				5420BE9320C1DFED00E5F301 /* Propuesta.swift in Sources */,
 				75329FAC20B11C7700B69F7D /* MYID.xcdatamodeld in Sources */,
 				5420BE9120C1DEFE00E5F301 /* Convenio.swift in Sources */,
+				54B44D7320C6E928000A2ED6 /* AdministradorImagenes.swift in Sources */,
 				750B80CE20B656E40005B8B6 /* OtrosController.swift in Sources */,
 				5420BE9920C2065A00E5F301 /* AdministradorBaseDatos.swift in Sources */,
 				75B8E64220BD0BAC006FBD01 /* SWRevealViewController.m in Sources */,

@@ -95,6 +95,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     DispatchQueue.main.async {
                         if respuesta {
                             AdministradorBaseDatos.idUsuarioActual = self.identificacionText.text!
+                            AdministradorBaseDatos.recordarUsuario = self.recordarSwitch.isOn
                             let vc : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
                             SVProgressHUD.dismiss()
                             self.present(vc, animated: true, completion: nil)
@@ -113,6 +114,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         AdministradorBaseDatos.instancia.verificarUsuarioRecordado(onSuccess: { identificacion in
                 DispatchQueue.main.async {
                     if identificacion != "" {
+                        AdministradorBaseDatos.recordarUsuario = true
                         AdministradorBaseDatos.idUsuarioActual = identificacion
                         let vc : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuSideScreen")
                         self.present(vc, animated: true, completion: nil)

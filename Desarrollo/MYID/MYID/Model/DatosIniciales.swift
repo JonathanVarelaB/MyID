@@ -139,6 +139,6 @@ class DatosIniciales{
         propuesta2.descripcion = "Realizar actividades grupales extralaborales"
         propuesta3.identificador = 2
         propuesta3.creador = "987654321"
-        propuesta3.descripcion = "Disminuir el uso del papel"
+        propuesta3.descripcion = "Disminuir el uso del papel en la empresa"
     }
 }
