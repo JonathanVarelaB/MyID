@@ -105,8 +105,6 @@ class EditarGafeteController: UIViewController, UITextFieldDelegate {
                         }
                     }
             })
-            
-            
         }
     }
     

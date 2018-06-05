@@ -117,7 +117,16 @@ class AdministradorBaseDatos{
         })
     }
     
-    func prueba(){
-        
+    func editarFotoUsuario(identificacion: String, foto: UIImage, onSuccess: @escaping(Bool) -> Void){
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let usuario = self.realm.objects(Usuario.self).filter("identificacion == '" + identificacion + "'")
+            if usuario.count > 0 {
+                try! self.realm.write{
+                    //usuario[0].foto = foto
+                }
+                onSuccess(true)
+            }
+            onSuccess(false)
+        })
     }
 }

@@ -43,5 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>MYID requiere acceso a la cámara</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MYID requiere acceso a la galería</string>
 </dict>
 </plist>

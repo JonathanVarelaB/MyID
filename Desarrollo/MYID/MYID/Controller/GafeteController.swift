@@ -1,7 +1,7 @@
 import UIKit
 import SVProgressHUD
 
-class GafeteController: UIViewController {
+class GafeteController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     @IBOutlet weak var viewGafete: UIView!
     @IBOutlet weak var viewContacto: UIView!
@@ -16,6 +16,7 @@ class GafeteController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(GafeteController.cargarUsuario),name: NSNotification.Name(rawValue: "modalIsDimissed"),object: nil)
+        self.eventoFoto()
         self.establecerDiseno()
         self.funcionamientoMenu()
         self.revealViewController().rearViewRevealOverdraw = 0
@@ -67,6 +68,73 @@ class GafeteController: UIViewController {
         vc.nom = self.nombreText.text!
         vc.tel = self.telefonoText.text!
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    func eventoFoto(){
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GafeteController.showActionSheet))
+        self.fotoGafete.isUserInteractionEnabled = true
+        self.fotoGafete.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func showActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camara", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            self.camara()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Galería", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            self.galeria()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func camara(){
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self;
+            myPickerController.sourceType = .camera
+            self.present(myPickerController, animated: true, completion: nil)
+        }
+    }
+    
+    func galeria(){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self;
+            myPickerController.sourceType = .photoLibrary
+            self.present(myPickerController, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            //self.fotoGafete.image = image
+            self.guardarNuevaFoto(image: image)
+        }
+        self.dismiss(animated: true, completion: nil)
+        //self.guardarNuevaFoto(image: self.fotoGafete.image!)
+    }
+    
+    func guardarNuevaFoto(image: UIImage){
+        print("Guardando foto")
+        SVProgressHUD.show(withStatus: "Cargando")
+        AdministradorBaseDatos.instancia.editarFotoUsuario(identificacion: AdministradorBaseDatos.idUsuarioActual, foto: image,
+            onSuccess: { respuesta in
+                DispatchQueue.main.async {
+                    if respuesta {
+                        self.fotoGafete.image = image
+                        SVProgressHUD.dismiss()
+                    }
+                    else{
+                        SVProgressHUD.dismiss()
+                        self.alerta(titulo: "Gafete", subtitulo: "Hubo un error, intente de nuevo.", boton: "Aceptar")
+                    }
+                }
+        })
     }
     
 }
