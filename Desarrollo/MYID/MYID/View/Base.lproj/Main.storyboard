@@ -1273,6 +1273,9 @@
                                                             <state key="normal" image="agree">
                                                                 <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="votarPositivo:" destination="Yhv-bM-4ok" eventType="touchUpInside" id="XSD-Zh-oht"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1299,6 +1302,9 @@
                                                             <state key="normal" image="disagree">
                                                                 <color key="titleColor" red="0.26033528649999998" green="0.64313725489999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="votarNegativo:" destination="Yhv-bM-4ok" eventType="touchUpInside" id="FI9-fI-rak"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1431,6 +1437,9 @@
                                                 <state key="normal" title="Guardar">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="guardarPropuesta:" destination="qjZ-Ig-g9d" eventType="touchUpInside" id="65A-db-qpj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nd1-ms-eIU">
                                                 <rect key="frame" x="138" y="0.0" width="120" height="50"/>

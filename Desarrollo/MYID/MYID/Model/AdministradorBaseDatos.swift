@@ -111,8 +111,8 @@ class AdministradorBaseDatos{
     }
     
     func cargarPropuestas(onSuccess: @escaping([Propuesta]) -> Void){
-        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
-            let propuestas = self.realm.objects(Propuesta.self)
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(0.5), repeats: false, block: { (Timer)  -> Void in
+            let propuestas = self.realm.objects(Propuesta.self).sorted(byKeyPath: "identificador", ascending: false)
             onSuccess(Array(propuestas))
         })
     }
@@ -164,4 +164,101 @@ class AdministradorBaseDatos{
         }
     }
     
+    func agregarPropuesta(propuesta: String, creador: String, onSuccess: @escaping(Bool) -> Void){
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let propuestas = self.realm.objects(Propuesta.self)
+            let nuevaPropuesta = Propuesta()
+            nuevaPropuesta.creador = creador
+            nuevaPropuesta.descripcion = propuesta
+            nuevaPropuesta.identificador = propuestas.count
+            try! self.realm.write {
+                self.realm.add(nuevaPropuesta)
+            }
+            onSuccess(true)
+        })
+    }
+    
+    func editarPropuesta(idPropuesta: Int, descPropuesta: String, onSuccess: @escaping(Bool) -> Void){
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let propuesta = self.realm.objects(Propuesta.self).filter("identificador == \(idPropuesta)")
+            if propuesta.count > 0 {
+                try! self.realm.write{
+                    propuesta[0].descripcion = descPropuesta
+                }
+                onSuccess(true)
+            }
+            else{
+                onSuccess(false)
+            }
+        })
+    }
+    
+    func eliminarPropuesta(idPropuesta: Int, onSuccess: @escaping(Bool) -> Void) {
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
+            let propuesta = self.realm.objects(Propuesta.self).filter("identificador == \(idPropuesta)")
+            if propuesta.count > 0 {
+                try! self.realm.write{
+                    self.realm.delete(propuesta)
+                }
+                onSuccess(true)
+            }
+            else{
+                onSuccess(false)
+            }
+        })
+    }
+    
+    func obtenerVotoPropuestaUsuario(idPropuesta: Int, idUsuario: String, onSuccess: @escaping(Int) -> Void) {
+        let votoPropUsua = self.realm.objects(PropuestaVotoUsuario.self).filter("propuesta == \(idPropuesta) AND usuario == '" + idUsuario + "'")
+        if votoPropUsua.count > 0 {
+            onSuccess(votoPropUsua[0].voto)
+        }
+        else{
+            onSuccess(0)
+        }
+    }
+    
+    func votarPropuesta(idPropuesta: Int, idUsuario: String, voto: Int, onSuccess: @escaping(Bool) -> Void) {
+        let votoPropUsua = self.realm.objects(PropuestaVotoUsuario.self).filter("propuesta == \(idPropuesta) AND usuario == '" + idUsuario + "'")
+        if votoPropUsua.count > 0 {
+            switch votoPropUsua[0].voto {
+                case 1:
+                    if voto == 1 {
+                        self.votar(objeto: votoPropUsua[0], voto: 0)
+                    }
+                    else{
+                        if voto == 2 {
+                            self.votar(objeto: votoPropUsua[0], voto: 2)
+                        }
+                    }
+                case 2:
+                    if voto == 2 {
+                        self.votar(objeto: votoPropUsua[0], voto: 0)
+                    }
+                    else{
+                        if voto == 1 {
+                            self.votar(objeto: votoPropUsua[0], voto: 1)
+                        }
+                    }
+                default:
+                    self.votar(objeto: votoPropUsua[0], voto: voto)
+            }
+        }
+        else{
+            let votoPU = PropuestaVotoUsuario()
+            votoPU.propuesta = idPropuesta
+            votoPU.usuario = idUsuario
+            votoPU.voto = voto
+            try! self.realm.write {
+                self.realm.add(votoPU)
+            }
+        }
+        onSuccess(true)
+    }
+    
+    func votar(objeto: PropuestaVotoUsuario, voto: Int){
+        try! self.realm.write {
+            objeto.voto = voto
+        }
+    }
 }

@@ -7,11 +7,13 @@ class PropuestaController: UITableViewController {
     var propuestas: [Propuesta] = []
     var disagreeRojo: UIColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0)
     var agreeVerde: UIColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
+    var azulOscuro: UIColor = UIColor(red: 19.0/255, green: 41.0/255, blue: 59.0/255, alpha: 1.0)
     var disagreeImage: UIImage? = nil
     var agreeImage: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(PropuestaController.cargarPropuestas),name: NSNotification.Name(rawValue: "modalIsDimissed"),object: nil)
         self.cargarPropuestas()
         self.funcionamientoMenu()
         disagreeImage = UIImage(named: "disagree")?.withRenderingMode(.alwaysTemplate)
@@ -30,13 +32,17 @@ class PropuestaController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Propuesta Cell", for: indexPath) as! PropuestaCell
         cell.identificador = self.propuestas[indexPath.row].identificador
         cell.descripcionText.text = self.propuestas[indexPath.row].descripcion
+        cell.editarBoton.tag = indexPath.row
+        cell.eliminarBoton.tag = indexPath.row
+        cell.agreeBoton.tag = indexPath.row
+        cell.disagreeBoton.tag = indexPath.row
+        cell.disagreeBoton.setImage(self.disagreeImage, for: .normal)
+        cell.agreeBoton.setImage(self.agreeImage, for: .normal)
         let autorId = self.propuestas[indexPath.row].creador
         if autorId == AdministradorBaseDatos.idUsuarioActual {
             cell.editarBoton.isHidden = false
             cell.eliminarBoton.isHidden = false
         }
-        cell.editarBoton.tag = indexPath.row
-        cell.eliminarBoton.tag = indexPath.row
         AdministradorBaseDatos.instancia.obtenerNombreUsuario(identificacion: autorId,onSuccess: { nombreUsuario in
             DispatchQueue.main.async {
                 if nombreUsuario != "" {
@@ -44,18 +50,48 @@ class PropuestaController: UITableViewController {
                 }
             }
         })
-        /*
-        cell.disagreeBoton.setImage(disagreeImage, for: .normal)
-        cell.disagreeBoton.tintColor = disagreeRojo
-        cell.agreeBoton.setImage(agreeImage, for: .normal)
-        cell.agreeBoton.tintColor = agreeVerde
-        */
-        
+        AdministradorBaseDatos.instancia.obtenerVotoPropuestaUsuario(
+            idPropuesta: cell.identificador, idUsuario: AdministradorBaseDatos.idUsuarioActual, onSuccess: { voto in
+            DispatchQueue.main.async {
+                switch voto {
+                    case 1:
+                        cell.agreeBoton.tintColor = self.agreeVerde
+                        cell.disagreeBoton.tintColor = self.azulOscuro
+                    case 2:
+                        cell.disagreeBoton.tintColor = self.disagreeRojo
+                        cell.agreeBoton.tintColor = self.azulOscuro
+                    default:
+                        cell.disagreeBoton.tintColor = self.azulOscuro
+                        cell.agreeBoton.tintColor = self.azulOscuro
+                }
+            }
+        })
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 120.0;
+    }
+    
+    @IBAction func votarPositivo(_ sender: UIButton) {
+        self.votar(tag: sender.tag, voto: 1)
+    }
+    
+    @IBAction func votarNegativo(_ sender: UIButton) {
+       self.votar(tag: sender.tag, voto: 2)
+    }
+    
+    func votar(tag: Int, voto: Int){
+        let indexpath = IndexPath(row: tag, section: 0)
+        let currentCell = tableView.cellForRow(at: indexpath) as! PropuestaCell
+        AdministradorBaseDatos.instancia.votarPropuesta(
+            idPropuesta: currentCell.identificador, idUsuario: AdministradorBaseDatos.idUsuarioActual, voto: voto, onSuccess: { respuesta in
+                DispatchQueue.main.async {
+                    if respuesta {
+                        self.cargarPropuestas()
+                    }
+                }
+        })
     }
     
     func funcionamientoMenu(){
@@ -69,11 +105,29 @@ class PropuestaController: UITableViewController {
     @IBAction func eliminarPropuesta(_ sender: UIButton) {
         let alert = UIAlertController(title: "Eliminar", message: "¿Desea eliminar la propuesta?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Eliminar", style: UIAlertActionStyle.destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "Eliminar", style: UIAlertActionStyle.destructive, handler: { (alert:UIAlertAction!) -> Void in self.borrarPropuesta(sender: sender) }))
         self.present(alert, animated: true, completion: nil)
     }
     
-    func cargarPropuestas(){
+    func borrarPropuesta(sender: UIButton){
+        SVProgressHUD.setStatus("Cargando")
+        let indexpath = IndexPath(row: sender.tag, section: 0)
+        let currentCell = tableView.cellForRow(at: indexpath) as! PropuestaCell
+        AdministradorBaseDatos.instancia.eliminarPropuesta(idPropuesta: currentCell.identificador, onSuccess: { respuesta in
+                DispatchQueue.main.async {
+                    if respuesta {
+                        SVProgressHUD.dismiss()
+                        self.cargarPropuestas()
+                    }
+                    else {
+                        SVProgressHUD.dismiss()
+                        self.alerta(titulo: "Propuesta", subtitulo: "Hubo un error, intente de nuevo.", boton: "Aceptar")
+                    }
+                }
+        })
+    }
+    
+    @objc func cargarPropuestas(){
         print("Cargar Propuestas")
         SVProgressHUD.show(withStatus: "Cargando")
         AdministradorBaseDatos.instancia.cargarPropuestas(onSuccess: { propuestasArray in
