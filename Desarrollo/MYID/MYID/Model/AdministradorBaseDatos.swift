@@ -32,9 +32,9 @@ class AdministradorBaseDatos{
                 realm.add(datos.convenio6)
                 realm.add(datos.convenio7)
                 realm.add(datos.convenio8)
-                realm.add(datos.propuesta1)
-                realm.add(datos.propuesta2)
-                realm.add(datos.propuesta3)
+                //realm.add(datos.propuesta1)
+                //realm.add(datos.propuesta2)
+                //realm.add(datos.propuesta3)
             }
         }
         print("Usuarios: \( realm.objects(Usuario.self).count)")
@@ -166,11 +166,10 @@ class AdministradorBaseDatos{
     
     func agregarPropuesta(propuesta: String, creador: String, onSuccess: @escaping(Bool) -> Void){
         Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false, block: { (Timer)  -> Void in
-            let propuestas = self.realm.objects(Propuesta.self)
             let nuevaPropuesta = Propuesta()
             nuevaPropuesta.creador = creador
             nuevaPropuesta.descripcion = propuesta
-            nuevaPropuesta.identificador = propuestas.count
+            nuevaPropuesta.identificador = Int(Date().timeIntervalSince1970 * 1000.0)
             try! self.realm.write {
                 self.realm.add(nuevaPropuesta)
             }

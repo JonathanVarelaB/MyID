@@ -38,6 +38,11 @@ class PropuestaController: UITableViewController {
         cell.disagreeBoton.tag = indexPath.row
         cell.disagreeBoton.setImage(self.disagreeImage, for: .normal)
         cell.agreeBoton.setImage(self.agreeImage, for: .normal)
+        cell.disagreeBoton.tintColor = self.azulOscuro
+        cell.agreeBoton.tintColor = self.azulOscuro
+        cell.editarBoton.isHidden = true
+        cell.eliminarBoton.isHidden = true
+        print("IDPROPUESTA: \( cell.identificador)")
         let autorId = self.propuestas[indexPath.row].creador
         if autorId == AdministradorBaseDatos.idUsuarioActual {
             cell.editarBoton.isHidden = false

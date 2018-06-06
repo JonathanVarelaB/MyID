@@ -37,7 +37,7 @@ extension UIViewController {
             }
             else{
                 let caracter = String((textField.text?.last)!)
-                let expresionConEspacio = (conEspacio) ? ".*[^A-Za-z0-9 ].*" : ".*[^A-Za-z0-9].*"
+                let expresionConEspacio = (conEspacio) ? ".*[^A-Za-z0-9,.:()$%áéíóúÁÉÍÓÚ ].*" : ".*[^A-Za-z0-9].*"
                 let regex = try! NSRegularExpression(pattern: expresionConEspacio, options: [])
                 if regex.matches(in: caracter, options: [], range: NSRange(location: 0, length: 1)).count > 0 {
                     textField.deleteBackward()

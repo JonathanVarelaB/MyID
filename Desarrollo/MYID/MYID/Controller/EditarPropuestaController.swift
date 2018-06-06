@@ -32,7 +32,7 @@ class EditarPropuestaController: UIViewController, UITextViewDelegate{
     }
     
     func validacionFormulario() -> String{
-        if self.descripcionText.text == "" {
+        if self.descripcionText.textColor == UIColor.lightGray {
             return "Datos incompletos"
         }
         else{
@@ -91,10 +91,12 @@ class EditarPropuestaController: UIViewController, UITextViewDelegate{
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        let caracter = String((textView.text?.last)!)
-        let regex = try! NSRegularExpression(pattern: ".*[^A-Za-z0-9,.:()$% ].*", options: [])
-        if regex.matches(in: caracter, options: [], range: NSRange(location: 0, length: 1)).count > 0 {
-            textView.deleteBackward()
+        if textView.text != "" {
+            let caracter = String((textView.text?.last)!)
+            let regex = try! NSRegularExpression(pattern: ".*[^A-Za-z0-9,.:()$%áéíóúÁÉÍÓÚ ].*", options: [])
+            if regex.matches(in: caracter, options: [], range: NSRange(location: 0, length: 1)).count > 0 {
+                textView.deleteBackward()
+            }
         }
     }
     
