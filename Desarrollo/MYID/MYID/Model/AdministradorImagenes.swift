@@ -15,7 +15,6 @@ class AdministradorImagenes {
             try data.write(to: directory.appendingPathComponent(nombre + ".png")!)
             return true
         } catch {
-            print(error.localizedDescription)
             return false
         }
     }

@@ -11,7 +11,7 @@ class Convenio: Object{
     @objc dynamic var longitud: String = ""
 }
 /*
-    Tipo:
+    tipo:
         1 -> Restaurantes
         2 -> Tiendas
         3 -> Otros

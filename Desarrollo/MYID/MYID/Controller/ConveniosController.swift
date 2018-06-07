@@ -1,16 +1,9 @@
-//
-//  ConveniosController.swift
-//  MYID
-//
-//  Created by Jonathan Varela on 5/28/18.
-//  Copyright © 2018 Jonathan Varela. All rights reserved.
-//
-
 import UIKit
 
 class ConveniosController: UITabBarController {
     
     @IBOutlet weak var menuBoton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.funcionamientoMenu()

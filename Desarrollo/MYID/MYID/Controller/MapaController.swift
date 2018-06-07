@@ -19,7 +19,7 @@ class MapaController: UIViewController {
     
     func preparacionMapa(){
         let coordinada = CLLocationCoordinate2D(latitude: self.latitud, longitude: self.longitud)
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinada, 4000, 4000)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinada, 5000, 5000)
         let lugar = MKPointAnnotation();
         lugar.coordinate = coordinada;
         lugar.title = self.lugarNombre

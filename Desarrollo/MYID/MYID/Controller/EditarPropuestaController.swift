@@ -7,7 +7,7 @@ class EditarPropuestaController: UIViewController, UITextViewDelegate{
     var desc = ""
     var actividad: Int = 0
     var idPropuesta: Int = 0
-    /* Actividad
+    /* actividad
         0 -> agregar
         1 -> editar
     */

@@ -12,9 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.statusBarStyle = .lightContent
         let statusbar = UIApplication.shared.value(forKey: "statusBar") as? UIView
         statusbar?.backgroundColor = UIColor(red: 19.0/255, green: 41.0/255, blue: 59.0/255, alpha: 1.0)
-        //SVProgressHUD.setForegroundColor(UIColor(red: 47/255, green: 192/255, blue: 192/255, alpha: 0.9))
         SVProgressHUD.setForegroundColor(UIColor.white)
         SVProgressHUD.setBackgroundColor(UIColor(red: 19.0/255, green: 41.0/255, blue: 59.0/255, alpha: 1.0))
+        SVProgressHUD.setDefaultMaskType(.clear)
         return true
     }
 

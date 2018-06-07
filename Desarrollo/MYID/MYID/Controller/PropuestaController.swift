@@ -30,6 +30,7 @@ class PropuestaController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Propuesta Cell", for: indexPath) as! PropuestaCell
+        let autorId = self.propuestas[indexPath.row].creador
         cell.identificador = self.propuestas[indexPath.row].identificador
         cell.descripcionText.text = self.propuestas[indexPath.row].descripcion
         cell.editarBoton.tag = indexPath.row
@@ -42,8 +43,6 @@ class PropuestaController: UITableViewController {
         cell.agreeBoton.tintColor = self.azulOscuro
         cell.editarBoton.isHidden = true
         cell.eliminarBoton.isHidden = true
-        print("IDPROPUESTA: \( cell.identificador)")
-        let autorId = self.propuestas[indexPath.row].creador
         if autorId == AdministradorBaseDatos.idUsuarioActual {
             cell.editarBoton.isHidden = false
             cell.eliminarBoton.isHidden = false
@@ -137,10 +136,8 @@ class PropuestaController: UITableViewController {
         SVProgressHUD.show(withStatus: "Cargando")
         AdministradorBaseDatos.instancia.cargarPropuestas(onSuccess: { propuestasArray in
             DispatchQueue.main.async {
-                if propuestasArray.count > 0{
-                    self.propuestas = propuestasArray
-                    self.tableView.reloadData()
-                }
+                self.propuestas = propuestasArray
+                self.tableView.reloadData()
                 SVProgressHUD.dismiss()
             }
         })
