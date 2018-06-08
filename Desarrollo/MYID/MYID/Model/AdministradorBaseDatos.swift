@@ -32,9 +32,9 @@ class AdministradorBaseDatos{
                 realm.add(datos.convenio6)
                 realm.add(datos.convenio7)
                 realm.add(datos.convenio8)
-                //realm.add(datos.propuesta1)
-                //realm.add(datos.propuesta2)
-                //realm.add(datos.propuesta3)
+                realm.add(datos.propuesta1)
+                realm.add(datos.propuesta2)
+                realm.add(datos.propuesta3)
             }
         }
         print("Usuarios: \( realm.objects(Usuario.self).count)")
